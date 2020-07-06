@@ -6,6 +6,7 @@ import {
   Wrapper,
   Content,
   Hightlight,
+  FeedTile,
   HightlightsWrapper,
   ArticlesFeedWrapper,
   SidebarWrapper,
@@ -117,8 +118,143 @@ const HightlightArticles = () => {
 const ArticlesFeed = () => {
   return (
     <ArticlesFeedWrapper>
-      Feed
-      <div>Articles</div>
+      <h1>Últimas notícias</h1>
+      <FeedTile highlight>
+        <Link to="article/2">
+          <figure>
+            <small>Futebol</small>
+            <img
+              src={ArticleImg2}
+              alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
+            />
+          </figure>
+          <h1>
+            Esse é o real motivo de tanto nordestino torcer pra Flamengo e
+            Corinthians
+          </h1>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>1 de Julho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile>
+        <Link to="article/2">
+          <figure>
+            <small>Futebol</small>
+            <img
+              src={ArticleImg3}
+              alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+            />
+          </figure>
+          <h1>Por que essa mão na bola antes da Copa envolveu até dinheiro</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
+            eum, sint similique obcaecati.
+          </p>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>28 de Junho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile>
+        <Link to="article/2">
+          <figure>
+            <small>NFL</small>
+            <img
+              src={ArticleImg4}
+              alt="Por que esse gesto mudou a NFL pra sempre"
+            />
+          </figure>
+          <h1>Por que esse gesto mudou a NFL pra sempre</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
+            eum, sint similique obcaecati.
+          </p>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>25 de Junho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile>
+        <Link to="article/2">
+          <figure>
+            <small>NFL</small>
+            <img
+              src={ArticleImg4}
+              alt="Por que esse gesto mudou a NFL pra sempre"
+            />
+          </figure>
+          <h1>Por que esse gesto mudou a NFL pra sempre</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
+            eum, sint similique obcaecati.
+          </p>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>25 de Junho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile highlight>
+        <Link to="article/2">
+          <figure>
+            <small>NFL</small>
+            <img
+              src={ArticleImg4}
+              alt="Por que esse gesto mudou a NFL pra sempre"
+            />
+          </figure>
+          <h1>Por que esse gesto mudou a NFL pra sempre</h1>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>25 de Junho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile>
+        <Link to="article/2">
+          <figure>
+            <small>Futebol</small>
+            <img
+              src={ArticleImg2}
+              alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
+            />
+          </figure>
+          <h1>
+            Esse é o real motivo de tanto nordestino torcer pra Flamengo e
+            Corinthians
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
+            eum, sint similique obcaecati.
+          </p>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>1 de Julho</strong>
+          </span>
+        </Link>
+      </FeedTile>
+      <FeedTile>
+        <Link to="article/2">
+          <figure>
+            <small>Futebol</small>
+            <img
+              src={ArticleImg3}
+              alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+            />
+          </figure>
+          <h1>Por que essa mão na bola antes da Copa envolveu até dinheiro</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
+            eum, sint similique obcaecati.
+          </p>
+          <span>
+            por <strong>Murilo Megale</strong> | <strong>28 de Junho</strong>
+          </span>
+        </Link>
+      </FeedTile>
     </ArticlesFeedWrapper>
   );
 };
@@ -126,8 +262,7 @@ const ArticlesFeed = () => {
 const Sidebar = () => {
   return (
     <SidebarWrapper>
-      Sidebar
-      <div> Videos</div>
+      <h1>Vídeos</h1>
     </SidebarWrapper>
   );
 };
@@ -136,10 +271,10 @@ const Main = () => {
   return (
     <MainWrapper>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-        <Col lg={18}>
+        <Col lg={16}>
           <ArticlesFeed />
         </Col>
-        <Col lg={6}>
+        <Col lg={8}>
           <Sidebar />
         </Col>
       </Row>

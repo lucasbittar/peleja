@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import Bg from '~/assets/bg.jpg';
+
 export default createGlobalStyle`
 
   * {
@@ -19,6 +21,8 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
+    background: url(${Bg});
+    background-attachment: fixed;
   }
 
   body {
@@ -38,10 +42,9 @@ export default createGlobalStyle`
   }
 
   .ant-col {
-  margin-top: 1rem;
+    margin-top: 1rem;
     @media screen and (min-width: 992px) {
       margin-top: 0;
-
     }
   }
 `;

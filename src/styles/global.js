@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Roboto+Condensed:wght@700&display=swap');
 
   * {
     padding: 0;
@@ -23,12 +22,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font: 14px 'Merriweather', serif;
-  }
-
-  h1, h2, h3, h4, h5 {
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
+    font: 16px 'Crimson Text', serif;
   }
 
   ul {
@@ -41,5 +35,13 @@ export default createGlobalStyle`
 
   .ant-row {
     margin: 0 !important;
+  }
+
+  .ant-col {
+  margin-top: 1rem;
+    @media screen and (min-width: 992px) {
+      margin-top: 0;
+
+    }
   }
 `;

@@ -9,29 +9,66 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
+export const SidebarWrapper = styled.aside`
+  margin: 0 auto;
+  width: 100%;
+`;
+
+export const MainWrapper = styled.div`
+  margin: 0 auto;
+  width: 100%;
+`;
+
+export const ArticlesFeedWrapper = styled.div`
+  margin: 0 auto;
+  width: 100%;
+`;
+
 export const Content = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1140px;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 992px) {
+    font-size: 2rem;
+    padding: 0;
+  }
 `;
 
 export const HightlightsWrapper = styled.div`
-  margin-top: 3rem;
+  margin-top: 0.6rem;
   margin-bottom: 3rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid #f4f4f4;
+
+  @media screen and (min-width: 992px) {
+    margin-top: 2rem;
+  }
 `;
 
 export const Hightlight = styled.div`
   height: 100%;
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: 992px) {
+    // margin-bottom: 0;
+  }
+
   a {
     color: #111;
     width: 100%;
     height: 100%;
+    min-height: 320px;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     position: relative;
+
+    @media screen and (min-width: 992px) {
+      min-height: auto;
+      margin-bottom: 0;
+    }
+
     figure {
       margin: 0;
       position: relative;
@@ -62,28 +99,66 @@ export const Hightlight = styled.div`
 
     > div {
       position: absolute;
-      padding: 2rem;
+      padding: 0.5rem;
       z-index: 2;
+
+      @media screen and (min-width: 992px) {
+        padding: 2rem;
+      }
+
+      > div {
+        span {
+          font-size: 0.6rem;
+          @media screen and (min-width: 992px) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      p {
+        color: #fff;
+        padding: 0.5rem;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.3;
+        display: none;
+
+        @media screen and (min-width: 992px) {
+          display: block;
+        }
+      }
 
       h1 {
         margin-left: 0.5rem;
         max-width: 550px;
+        line-height: 0.5;
+        margin-bottom: 0.2rem;
         span {
-          text-transform: uppercase;
-          font-weight: bold;
+          font-family: 'Raleway', sans-serif;
+          font-weight: 900;
+          font-size: 1.2rem;
           display: inline;
           background: ${highlight};
           color: white;
-          padding: ${padding};
+          padding: 0.2rem;
           padding-left: 0;
           padding-right: 0;
-          line-height: 1.5;
+          line-height: 1;
           -webkit-box-decoration-break: clone;
           -ms-box-decoration-break: clone;
           -o-box-decoration-break: clone;
           box-decoration-break: clone;
           box-shadow: ${padding} 0 0 ${highlight}, -${padding} 0 0 ${highlight};
           transition: all 300ms ease-out;
+        }
+
+        @media screen and (min-width: 992px) {
+          margin-bottom: 0.8rem;
+          span {
+            font-size: 2rem;
+            line-height: normal;
+            padding: ${padding};
+          }
         }
       }
 
@@ -94,6 +169,7 @@ export const Hightlight = styled.div`
       small,
       span {
         padding: 0.5rem;
+        font-family: 'Raleway', sans-serif;
       }
 
       small {
@@ -101,10 +177,15 @@ export const Hightlight = styled.div`
         text-transform: uppercase;
         background: #fff;
         font-weight: bold;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Raleway', sans-serif;
         margin-bottom: 0.2rem;
+        font-size: 0.6rem;
         padding: 0.4rem 0.4rem;
         line-height: normal;
+
+        @media screen and (min-width: 992px) {
+          font-size: 0.8rem;
+        }
       }
 
       span {
@@ -133,14 +214,51 @@ export const Hightlight = styled.div`
   ${(props) =>
     props.secondary &&
     css`
+      height: auto;
+      margin-bottom: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e5e5;
+      min-height: 100px;
+      &:last-child {
+        margin: 0;
+      }
       a {
         height: auto;
+        min-height: auto;
         display: block;
         color: #111;
-        margin-bottom: 1.8rem;
+        position: relative;
 
-        &:last-child {
-          margin: 0;
+        figure {
+          position: relative;
+          margin-bottom: 0.8rem;
+          float: left;
+          display: inline-block;
+          margin-right: 0.8rem;
+          margin-bottom: 1.2rem;
+          width: 40%;
+
+          @media screen and (min-width: 992px) {
+            float: none;
+            display: block;
+            margin: 0;
+            width: 100%;
+          }
+
+          &:before {
+            content: none;
+          }
+
+          small {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-size: 0.6rem;
+
+            @media screen and (min-width: 992px) {
+              font-size: 0.8rem;
+            }
+          }
         }
 
         &:before {
@@ -148,24 +266,44 @@ export const Hightlight = styled.div`
         }
 
         h1 {
-          font-size: 1.2rem;
+          font-size: 0.9rem;
           text-transform: none;
-          font-weight: bold;
+          font-family: 'Raleway', sans-serif;
+          font-weight: 700;
           transition: all 300ms ease-out;
+
+          @media screen and (min-width: 992px) {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            font-weight: 900;
+          }
         }
 
         p {
-          opacity: 0.7;
+          font-size: 1rem;
+          line-height: 1.3;
+          opacity: 0.8;
+          display: none;
+
+          @media screen and (min-width: 992px) {
+            display: block;
+          }
         }
 
         span {
+          font-family: 'Raleway', sans-serif;
+          font-size: 0.6rem;
+          position: absolute;
           strong {
             color: ${darken(0.3, '#f4e229')};
+          }
+          @media screen and (min-width: 992px) {
+            font-size: 0.8rem;
           }
         }
 
         small {
-          font-family: 'Roboto Condensed', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-weight: bold;
           background: #f4e229;
           text-transform: uppercase;
@@ -177,6 +315,35 @@ export const Hightlight = styled.div`
         &:hover {
           h1 {
             color: ${darken(0.3, '#f4e229')};
+          }
+        }
+      }
+    `};
+
+  ${(props) =>
+    props.small &&
+    css`
+      padding-bottom: 1.2rem;
+      min-height: 100px;
+      @media screen and (min-width: 992px) {
+        min-height: 125px;
+      }
+      a {
+        h1 {
+          font-size: 0.9rem;
+          @media screen and (min-width: 992px) {
+            font-size: 1rem;
+          }
+        }
+        figure {
+          float: left;
+          display: inline-block;
+          margin-right: 0.8rem;
+          margin-bottom: 1.2rem;
+          width: 40%;
+
+          @media screen and (min-width: 992px) {
+            width: 50%;
           }
         }
       }

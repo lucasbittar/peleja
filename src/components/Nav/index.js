@@ -5,6 +5,7 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
   SearchOutlined,
+  MenuOutlined,
 } from '@ant-design/icons';
 
 import { Wrapper } from './styles';
@@ -19,8 +20,11 @@ export default function Nav() {
           <img src={Logo} alt="PELEJA" />
         </Link>
         <aside>
-          <ul>
+          <ul className="nav-desktop">
             <li>Destaques</li>
+            <li>Futebol</li>
+            <li>NFL</li>
+            <li>NBA</li>
             <li>Podcasts</li>
           </ul>
           <ul>
@@ -34,6 +38,9 @@ export default function Nav() {
               <SearchOutlined />
             </li>
           </ul>
+          <div>
+            <MenuOutlined style={{ color: '#111', fontSize: '18px' }} />
+          </div>
         </aside>
       </div>
     </Wrapper>

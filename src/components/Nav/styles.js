@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Wrapper = styled.nav`
-  background: #f4e229;
+  // background: #f4e229;
+  background: #111;
   display: flex;
   width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,7 +17,7 @@ export const Wrapper = styled.nav`
 
   .anticon {
     font-size: 1.2rem;
-    color: ${darken(0.2, '#f4e229')};
+    color: ${darken(0.2, '#fff')};
   }
 
   @media screen and (min-width: 992px) {
@@ -41,7 +42,7 @@ export const Wrapper = styled.nav`
 
     ul {
       &:first-child {
-        border-right: 1px solid #111;
+        border-right: 1px solid #fff;
         padding-right: 1.5rem;
       }
     }
@@ -68,8 +69,15 @@ export const Wrapper = styled.nav`
     font-size: 0.95rem;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    color: #111;
+    color: #fff;
     text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 300ms ease-out;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .nav-desktop {
@@ -77,6 +85,16 @@ export const Wrapper = styled.nav`
 
     @media screen and (min-width: 992px) {
       display: flex;
+      li {
+        padding-right: 1.5rem;
+        border-right: 1px solid ${darken(0.1, '#f4e229')};
+
+        &:last-child {
+          border: none;
+          margin-right: 0;
+          padding-right: 0;
+        }
+      }
     }
   }
 `;

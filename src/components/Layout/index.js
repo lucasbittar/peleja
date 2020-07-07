@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-const padding = '0.5rem';
-const highlight = '#d63450';
+export const padding = '0.5rem';
+export const highlight = '#d63450';
 
 export const Wrapper = styled.div`
   margin: 0 auto;

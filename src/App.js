@@ -33,11 +33,10 @@ const Footer = () => {
         </Row>
         <Row>
           <ul>
-            <li>Destaques</li>
-            <li>Futebol</li>
-            <li>NFL</li>
-            <li>NBA</li>
-            <li>Podcasts</li>
+            <li>Leia</li>
+            <li>Assista</li>
+            <li>Ouça</li>
+            <li>Compre</li>
           </ul>
         </Row>
       </div>

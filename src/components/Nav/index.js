@@ -10,7 +10,7 @@ import {
 
 import { Wrapper } from './styles';
 
-import Logo from '~/assets/logo.png';
+import Logo from '~/assets/logo-white.png';
 
 export default function Nav() {
   return (
@@ -21,13 +21,12 @@ export default function Nav() {
         </Link>
         <aside>
           <ul className="nav-desktop">
-            <li>Destaques</li>
-            <li>Futebol</li>
-            <li>NFL</li>
-            <li>NBA</li>
-            <li>Podcasts</li>
+            <li>Leia</li>
+            <li>Assista</li>
+            <li>Ouça</li>
+            <li>Compre</li>
             <li>
-              <SearchOutlined style={{ color: '#111', marginLeft: '1rem' }} />
+              <SearchOutlined style={{ color: '#fff', marginLeft: '1rem' }} />
             </li>
           </ul>
           <ul>
@@ -39,7 +38,7 @@ export default function Nav() {
             </li>
           </ul>
           <div>
-            <MenuOutlined style={{ color: '#111', fontSize: '18px' }} />
+            <MenuOutlined style={{ color: '#fff', fontSize: '18px' }} />
           </div>
         </aside>
       </div>

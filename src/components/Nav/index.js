@@ -26,6 +26,9 @@ export default function Nav() {
             <li>NFL</li>
             <li>NBA</li>
             <li>Podcasts</li>
+            <li>
+              <SearchOutlined style={{ color: '#111', marginLeft: '1rem' }} />
+            </li>
           </ul>
           <ul>
             <li>
@@ -33,9 +36,6 @@ export default function Nav() {
             </li>
             <li>
               <YoutubeOutlined />
-            </li>
-            <li>
-              <SearchOutlined />
             </li>
           </ul>
           <div>

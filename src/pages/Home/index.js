@@ -1,15 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'antd';
+import { PlayCircleOutlined } from '@ant-design/icons';
 
 import {
   Wrapper,
   Content,
   Hightlight,
   FeedTile,
+  CategoryTag,
+  ProgramsWrapper,
+  VideoTile,
   HightlightsWrapper,
   ArticlesFeedWrapper,
   SidebarWrapper,
+  SectionHeader,
   MainWrapper,
 } from '~/components/Layout';
 
@@ -17,6 +22,12 @@ import ArticleImg from '~/assets/article-highlight.jpg';
 import ArticleImg2 from '~/assets/article-img-2.jpg';
 import ArticleImg3 from '~/assets/article-img-3.jpg';
 import ArticleImg4 from '~/assets/article-img-4.jpg';
+import ArticleImg5 from '~/assets/article-img-5.jpg';
+
+import Program1 from '~/assets/p1.jpg';
+import Program2 from '~/assets/p2.jpg';
+import Program3 from '~/assets/p3.jpg';
+import Program4 from '~/assets/p4.jpg';
 
 const HightlightArticles = () => {
   return (
@@ -30,7 +41,7 @@ const HightlightArticles = () => {
               </figure>
               <div>
                 <div>
-                  <small>Futebol</small>
+                  <CategoryTag type="futebol">Futebol</CategoryTag>
                 </div>
                 <h1>
                   <span>
@@ -57,7 +68,7 @@ const HightlightArticles = () => {
           <Hightlight secondary>
             <Link to="article/2">
               <figure>
-                <small>Futebol</small>
+                <CategoryTag type="futebol">Futebol</CategoryTag>
                 <img
                   src={ArticleImg2}
                   alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -80,15 +91,13 @@ const HightlightArticles = () => {
           <Hightlight secondary small>
             <Link to="article/2">
               <figure>
-                <small>Futebol</small>
+                <CategoryTag type="nba">NBA</CategoryTag>
                 <img
-                  src={ArticleImg3}
-                  alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+                  src={ArticleImg5}
+                  alt="O dia que jogadores e torcedores caíram na porrada"
                 />
               </figure>
-              <h1>
-                Por que essa mão na bola antes da Copa envolveu até dinheiro
-              </h1>
+              <h1>O dia que jogadores e torcedores caíram na porrada</h1>
               <span>
                 por <strong>Murilo Megale</strong>
               </span>
@@ -97,7 +106,7 @@ const HightlightArticles = () => {
           <Hightlight secondary small>
             <Link to="article/2">
               <figure>
-                <small>NFL</small>
+                <CategoryTag type="nfl">NFL</CategoryTag>
                 <img
                   src={ArticleImg4}
                   alt="Por que esse gesto mudou a NFL pra sempre"
@@ -118,11 +127,13 @@ const HightlightArticles = () => {
 const ArticlesFeed = () => {
   return (
     <ArticlesFeedWrapper>
-      <h1>Últimas notícias</h1>
+      <SectionHeader>
+        <h1>Últimas notícias</h1>
+      </SectionHeader>
       <FeedTile highlight>
         <Link to="article/2">
           <figure>
-            <small>Futebol</small>
+            <CategoryTag type="futebol">Futebol</CategoryTag>
             <img
               src={ArticleImg2}
               alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -140,7 +151,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <small>Futebol</small>
+            <CategoryTag type="futebol">Futebol</CategoryTag>
             <img
               src={ArticleImg3}
               alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
@@ -160,7 +171,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <small>NFL</small>
+            <CategoryTag type="nfl">NFL</CategoryTag>
             <img
               src={ArticleImg4}
               alt="Por que esse gesto mudou a NFL pra sempre"
@@ -180,13 +191,13 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <small>NFL</small>
+            <CategoryTag type="nba">NBA</CategoryTag>
             <img
-              src={ArticleImg4}
-              alt="Por que esse gesto mudou a NFL pra sempre"
+              src={ArticleImg5}
+              alt="O dia que jogadores e torcedores caíram na porrada"
             />
           </figure>
-          <h1>Por que esse gesto mudou a NFL pra sempre</h1>
+          <h1>O dia que jogadores e torcedores caíram na porrada</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
             voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
@@ -200,7 +211,7 @@ const ArticlesFeed = () => {
       <FeedTile highlight>
         <Link to="article/2">
           <figure>
-            <small>NFL</small>
+            <CategoryTag type="nfl">NFL</CategoryTag>
             <img
               src={ArticleImg4}
               alt="Por que esse gesto mudou a NFL pra sempre"
@@ -215,7 +226,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <small>Futebol</small>
+            <CategoryTag type="futebol">Futebol</CategoryTag>
             <img
               src={ArticleImg2}
               alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -238,13 +249,13 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <small>Futebol</small>
+            <CategoryTag type="nba">NBA</CategoryTag>
             <img
-              src={ArticleImg3}
-              alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+              src={ArticleImg5}
+              alt="O dia que jogadores e torcedores caíram na porrada"
             />
           </figure>
-          <h1>Por que essa mão na bola antes da Copa envolveu até dinheiro</h1>
+          <h1>O dia que jogadores e torcedores caíram na porrada</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
             voluptatum dolorum et eos maiores nemo itaque quis debitis tenetur
@@ -262,8 +273,88 @@ const ArticlesFeed = () => {
 const Sidebar = () => {
   return (
     <SidebarWrapper>
-      <h1>Vídeos</h1>
+      <SectionHeader>
+        <h1>Vídeos</h1>
+        <VideoTile>
+          <Link to="article/2">
+            <figure>
+              <PlayCircleOutlined />
+              <img
+                src={ArticleImg3}
+                alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+              />
+            </figure>
+            <h1>
+              Por que essa mão na bola antes da Copa envolveu até dinheiro
+            </h1>
+          </Link>
+        </VideoTile>
+        <VideoTile>
+          <Link to="article/2">
+            <figure>
+              <PlayCircleOutlined />
+              <img
+                src={ArticleImg4}
+                alt="Por que esse gesto mudou a NFL pra sempre"
+              />
+            </figure>
+            <h1>Por que esse gesto mudou a NFL pra sempre</h1>
+          </Link>
+        </VideoTile>
+        <VideoTile>
+          <Link to="article/2">
+            <figure>
+              <PlayCircleOutlined />
+              <img
+                src={ArticleImg3}
+                alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
+              />
+            </figure>
+            <h1>
+              Por que essa mão na bola antes da Copa envolveu até dinheiro
+            </h1>
+          </Link>
+        </VideoTile>
+      </SectionHeader>
     </SidebarWrapper>
+  );
+};
+
+const Programs = () => {
+  return (
+    <ProgramsWrapper>
+      <Content>
+        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          <Col lg={6}>
+            <h2>Programas PELEJA</h2>
+            <p>
+              Voluptatibus nobis architecto doloribus, debitis, sapiente non.
+            </p>
+            <Link to="/">Todos os programas</Link>
+          </Col>
+          <Col lg={18}>
+            <ul>
+              <li>
+                <img src={Program1} alt="Radar Peleja" />
+                <p>Modi corrupti similique eos, pariatur delectus quia!</p>
+              </li>
+              <li>
+                <img src={Program2} alt="Ponto a Ponto" />
+                <p>Jerum quibusdam laudantium ea similique</p>
+              </li>
+              <li>
+                <img src={Program3} alt="Essa Camisa" />
+                <p>Kveniet autem similique suscipit minima.</p>
+              </li>
+              <li>
+                <img src={Program4} alt="Fora do Eixo" />
+                <p>Consectetur distinctio minima cumque</p>
+              </li>
+            </ul>
+          </Col>
+        </Row>
+      </Content>
+    </ProgramsWrapper>
   );
 };
 
@@ -287,6 +378,7 @@ export default function Home() {
     <Wrapper>
       <Content>
         <HightlightArticles />
+        <Programs />
         <Main />
         <section />
       </Content>

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Wrapper = styled.nav`
   background: #f4e229;
   display: flex;
   width: 100%;
-  padding: 1rem 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
+  padding: 1rem 1rem;
 
   img {
     width: 80px;
@@ -15,11 +16,11 @@ export const Wrapper = styled.nav`
 
   .anticon {
     font-size: 1.2rem;
-    color: #fff;
+    color: ${darken(0.2, '#f4e229')};
   }
 
   @media screen and (min-width: 992px) {
-    padding: 1.8rem 1rem;
+    padding: 2rem 2rem;
 
     img {
       width: auto;
@@ -28,7 +29,7 @@ export const Wrapper = styled.nav`
 
   > div {
     width: 100%;
-    max-width: 1140px;
+    max-width: 1110px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +38,13 @@ export const Wrapper = styled.nav`
   aside {
     display: flex;
     align-items: center;
+
+    ul {
+      &:first-child {
+        border-right: 1px solid #111;
+        padding-right: 1.5rem;
+      }
+    }
 
     > div {
       display: block;
@@ -50,7 +58,7 @@ export const Wrapper = styled.nav`
 
   ul {
     margin: 0;
-    margin-left: 2rem;
+    margin-left: 1rem;
     display: flex;
     align-items: center;
   }

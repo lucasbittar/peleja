@@ -41,7 +41,7 @@ export const ArticlesContentWrapper = styled.article`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     color: #111;
 

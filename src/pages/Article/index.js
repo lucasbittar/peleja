@@ -53,6 +53,7 @@ const ArticlesContent = () => {
         quibusdam cum ipsa at, in veniam quidem dolorum.
       </p>
       <iframe
+        title="video"
         width="100%"
         height="415"
         src="https://www.youtube.com/embed/Jzab1k3YTiI"
@@ -124,11 +125,11 @@ const Sidebar = () => {
   return (
     <SidebarWrapper>
       <SectionHeader>
-        <h1>Mais lidos</h1>
+        <h1>Mais Vistos</h1>
         <FeedTile highlight>
           <Link to="article/2">
             <figure>
-              <CategoryTag type="futebol">Futebol</CategoryTag>
+              <CategoryTag type="assista">Assista</CategoryTag>
               <img
                 src={ArticleImg3}
                 alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
@@ -150,7 +151,7 @@ const Sidebar = () => {
         <FeedTile>
           <Link to="article/2">
             <figure>
-              <CategoryTag type="nfl">NFL</CategoryTag>
+              <CategoryTag type="ouça">Ouça</CategoryTag>
               <img
                 src={ArticleImg4}
                 alt="Por que esse gesto mudou a NFL pra sempre"
@@ -170,7 +171,7 @@ const Sidebar = () => {
         <FeedTile>
           <Link to="article/2">
             <figure>
-              <CategoryTag type="nba">NBA</CategoryTag>
+              <CategoryTag type="leia">Leia</CategoryTag>
               <img
                 src={ArticleImg5}
                 alt="O dia que jogadores e torcedores caíram na porrada"
@@ -197,7 +198,7 @@ export default function Article() {
     <Wrapper>
       <Content>
         <Header>
-          <CategoryTag type="futebol">Futebol</CategoryTag>
+          <CategoryTag type="assista">Assista</CategoryTag>
           <h1>Lembra quando Felipe Melo era pit bull de verdade?</h1>
           <h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis

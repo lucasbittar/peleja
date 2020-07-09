@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+import { fontSansSerif } from '~/components/Layout';
+
 export const Wrapper = styled.nav`
   // background: #f4e229;
   background: #111;
@@ -24,7 +26,7 @@ export const Wrapper = styled.nav`
     padding: 2rem 2rem;
 
     img {
-      width: auto;
+      width: 115px;
     }
   }
 
@@ -67,7 +69,7 @@ export const Wrapper = styled.nav`
   li {
     margin-left: 1rem;
     font-size: 0.95rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;

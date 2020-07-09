@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import Bg from '~/assets/bg.jpg';
+import { fontSansSerif } from '~/components/Layout';
 
 export default createGlobalStyle`
 
@@ -21,8 +21,6 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background: url(${Bg});
-    background-attachment: fixed;
   }
 
   body {
@@ -34,6 +32,10 @@ export default createGlobalStyle`
     color: #fff;
     padding: 1rem 0;
     margin-top: 1rem;
+
+    img {
+      max-width: 115px;
+    }
 
     @media screen and (min-width: 992px) {
       margin-top: 3rem;
@@ -60,7 +62,7 @@ export default createGlobalStyle`
       li {
         margin-right: 1rem;
         text-transform: uppercase;
-        font-family: 'Raleway', sans-serif;
+        font-family: ${fontSansSerif};
         opacity: 0.5;
         font-size: 0.6rem;
         transition: all 300ms ease-out;

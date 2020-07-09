@@ -3,10 +3,52 @@ import { darken } from 'polished';
 
 export const padding = '0.5rem';
 export const highlight = '#d63450';
+export const fontSansSerif = '"Exo 2", sans-serif';
 
 export const Wrapper = styled.div`
   margin: 0 auto;
   width: 100%;
+`;
+
+export const StoriesWrapper = styled.ul`
+  width: 100%;
+  max-width: 1108px;
+  display: flex;
+  margin: 1rem auto 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+
+    color: #111;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-family: ${fontSansSerif};
+  }
+
+  img {
+    border: 3px solid #f4e229;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.6rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    margin: 2rem auto;
+    img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.8rem;
+    }
+
+    li {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const ProgramsWrapper = styled.div`
@@ -23,9 +65,9 @@ export const ProgramsWrapper = styled.div`
   }
 
   h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 800;
   }
 
   p {
@@ -35,7 +77,7 @@ export const ProgramsWrapper = styled.div`
 
   a {
     color: ${darken(0.3, '#f4e229')};
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 1rem;
     text-transform: uppercase;
     display: block;
@@ -93,7 +135,7 @@ export const ProgramsWrapper = styled.div`
 `;
 
 export const CategoryTag = styled.small`
-  font-family: 'Raleway', sans-serif;
+  font-family: ${fontSansSerif};
   font-weight: bold;
   text-transform: uppercase;
   padding: 0.2rem 0.4rem;
@@ -101,20 +143,20 @@ export const CategoryTag = styled.small`
   margin-bottom: 0.4rem;
 
   ${(props) =>
-    props.type === 'futebol' &&
+    props.type === 'assista' &&
     css`
       background: #f4e229;
     `};
 
   ${(props) =>
-    props.type === 'nfl' &&
+    props.type === 'ouça' &&
     css`
       color: #fff;
       background: #061ef6;
     `};
 
   ${(props) =>
-    props.type === 'nba' &&
+    props.type === 'leia' &&
     css`
       color: #fff;
       background: #ca4927;
@@ -134,8 +176,8 @@ export const SectionHeader = styled.div`
 
   h1 {
     font-size: 1.5rem;
-    font-weight: 900;
-    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-family: ${fontSansSerif};
     margin-bottom: 1.5rem;
   }
 `;
@@ -161,7 +203,6 @@ export const Content = styled.div`
 `;
 
 export const HightlightsWrapper = styled.div`
-  margin-top: 0.6rem;
   margin-bottom: 3rem;
   padding-bottom: 0;
 
@@ -228,14 +269,14 @@ export const FeedTile = styled.div`
     h1 {
       font-size: 0.9rem;
       text-transform: none;
-      font-family: 'Raleway', sans-serif;
+      font-family: ${fontSansSerif};
       font-weight: 700;
       transition: all 300ms ease-out;
 
       @media screen and (min-width: 992px) {
         font-size: 1.2rem;
         margin-top: 0.5rem;
-        font-weight: 900;
+        font-weight: 800;
       }
     }
 
@@ -251,7 +292,7 @@ export const FeedTile = styled.div`
     }
 
     span {
-      font-family: 'Raleway', sans-serif;
+      font-family: ${fontSansSerif};
       font-size: 0.6rem;
       position: absolute;
       strong {
@@ -337,14 +378,14 @@ export const VideoTile = styled.div`
     h1 {
       font-size: 0.9rem;
       text-transform: none;
-      font-family: 'Raleway', sans-serif;
+      font-family: ${fontSansSerif};
       font-weight: 700;
       transition: all 300ms ease-out;
 
       @media screen and (min-width: 992px) {
         font-size: 1.2rem;
         margin-top: 0.5rem;
-        font-weight: 900;
+        font-weight: 800;
       }
     }
 
@@ -455,8 +496,8 @@ export const Hightlight = styled.div`
         line-height: 0.5;
         margin-bottom: 0.2rem;
         span {
-          font-family: 'Raleway', sans-serif;
-          font-weight: 900;
+          font-family: ${fontSansSerif};
+          font-weight: 800;
           font-size: 1.2rem;
           display: inline;
           background: ${highlight};
@@ -464,7 +505,7 @@ export const Hightlight = styled.div`
           padding: 0.2rem;
           padding-left: 0;
           padding-right: 0;
-          line-height: 1;
+          line-height: 1.6;
           -webkit-box-decoration-break: clone;
           -ms-box-decoration-break: clone;
           -o-box-decoration-break: clone;
@@ -477,7 +518,7 @@ export const Hightlight = styled.div`
           margin-bottom: 0.8rem;
           span {
             font-size: 2rem;
-            line-height: normal;
+            line-height: 1.5;
             padding: ${padding};
           }
         }
@@ -490,7 +531,7 @@ export const Hightlight = styled.div`
       small,
       span {
         padding: 0.5rem;
-        font-family: 'Raleway', sans-serif;
+        font-family: ${fontSansSerif};
       }
 
       small {
@@ -586,14 +627,14 @@ export const Hightlight = styled.div`
         h1 {
           font-size: 0.9rem;
           text-transform: none;
-          font-family: 'Raleway', sans-serif;
+          font-family: ${fontSansSerif};
           font-weight: 700;
           transition: all 300ms ease-out;
 
           @media screen and (min-width: 992px) {
             font-size: 1.2rem;
             margin-top: 0.5rem;
-            font-weight: 900;
+            font-weight: 800;
           }
         }
 
@@ -609,7 +650,7 @@ export const Hightlight = styled.div`
         }
 
         span {
-          font-family: 'Raleway', sans-serif;
+          font-family: ${fontSansSerif};
           font-size: 0.6rem;
           position: absolute;
           strong {
@@ -621,7 +662,7 @@ export const Hightlight = styled.div`
         }
 
         small {
-          font-family: 'Raleway', sans-serif;
+          font-family: ${fontSansSerif};
           font-weight: bold;
           text-transform: uppercase;
           padding: 0.2rem 0.4rem;

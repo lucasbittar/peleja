@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-import { padding, highlight } from '~/components/Layout';
+import { fontSansSerif } from '~/components/Layout';
 
 export const ArticlesContentWrapper = styled.article`
   margin-top: -2rem;
   h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 1rem;
   }
 
   h3 {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 1.2rem;
     opacity: 0.8;
     margin-top: 1rem;
@@ -19,7 +19,7 @@ export const ArticlesContentWrapper = styled.article`
   }
 
   blockquote {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     margin: 2rem 0 4rem;
     font-size: 1.1rem;
     position: relative;
@@ -109,7 +109,7 @@ export const Header = styled.div`
   }
 
   figcaption {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 0.6rem;
     text-transform: uppercase;
     opacity: 0.8;
@@ -122,7 +122,7 @@ export const Header = styled.div`
   }
 
   h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: ${fontSansSerif};
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
@@ -142,7 +142,7 @@ export const Header = styled.div`
     margin-bottom: 1rem;
     small,
     span {
-      font-family: 'Raleway', sans-serif;
+      font-family: ${fontSansSerif};
       font-size: 0.8rem;
       strong {
         color: ${darken(0.3, '#f4e229')};

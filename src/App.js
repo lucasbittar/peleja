@@ -37,6 +37,7 @@ const Footer = () => {
             <li>Assista</li>
             <li>Ouça</li>
             <li>Compre</li>
+            <li>Fale</li>
           </ul>
         </Row>
       </div>

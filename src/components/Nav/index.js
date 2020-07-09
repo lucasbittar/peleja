@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import {
   InstagramOutlined,
   YoutubeOutlined,
+  FacebookOutlined,
+  TwitterOutlined,
   SearchOutlined,
   MenuOutlined,
 } from '@ant-design/icons';
@@ -25,6 +27,7 @@ export default function Nav() {
             <li>Assista</li>
             <li>Ouça</li>
             <li>Compre</li>
+            <li>Fale</li>
             <li>
               <SearchOutlined style={{ color: '#fff', marginLeft: '1rem' }} />
             </li>
@@ -34,7 +37,13 @@ export default function Nav() {
               <InstagramOutlined />
             </li>
             <li>
+              <FacebookOutlined />
+            </li>
+            <li>
               <YoutubeOutlined />
+            </li>
+            <li>
+              <TwitterOutlined />
             </li>
           </ul>
           <div>

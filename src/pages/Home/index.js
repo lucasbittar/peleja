@@ -10,6 +10,7 @@ import {
   FeedTile,
   CategoryTag,
   ProgramsWrapper,
+  StoriesWrapper,
   VideoTile,
   HightlightsWrapper,
   ArticlesFeedWrapper,
@@ -32,7 +33,7 @@ import Program4 from '~/assets/p4.jpg';
 const HightlightArticles = () => {
   return (
     <HightlightsWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ lg: 32 }}>
         <Col lg={16}>
           <Hightlight>
             <Link to="article/1">
@@ -41,7 +42,7 @@ const HightlightArticles = () => {
               </figure>
               <div>
                 <div>
-                  <CategoryTag type="futebol">Futebol</CategoryTag>
+                  <CategoryTag type="assista">Assista</CategoryTag>
                 </div>
                 <h1>
                   <span>
@@ -68,7 +69,7 @@ const HightlightArticles = () => {
           <Hightlight secondary>
             <Link to="article/2">
               <figure>
-                <CategoryTag type="futebol">Futebol</CategoryTag>
+                <CategoryTag type="assista">Assista</CategoryTag>
                 <img
                   src={ArticleImg2}
                   alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -91,7 +92,7 @@ const HightlightArticles = () => {
           <Hightlight secondary small>
             <Link to="article/2">
               <figure>
-                <CategoryTag type="nba">NBA</CategoryTag>
+                <CategoryTag type="leia">Leia</CategoryTag>
                 <img
                   src={ArticleImg5}
                   alt="O dia que jogadores e torcedores caíram na porrada"
@@ -106,7 +107,7 @@ const HightlightArticles = () => {
           <Hightlight secondary small>
             <Link to="article/2">
               <figure>
-                <CategoryTag type="nfl">NFL</CategoryTag>
+                <CategoryTag type="ouça">Ouça</CategoryTag>
                 <img
                   src={ArticleImg4}
                   alt="Por que esse gesto mudou a NFL pra sempre"
@@ -128,12 +129,12 @@ const ArticlesFeed = () => {
   return (
     <ArticlesFeedWrapper>
       <SectionHeader>
-        <h1>Últimas notícias</h1>
+        <h1>Últimas do PELEJA</h1>
       </SectionHeader>
       <FeedTile highlight>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="futebol">Futebol</CategoryTag>
+            <CategoryTag type="assista">Assista</CategoryTag>
             <img
               src={ArticleImg2}
               alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -151,7 +152,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="futebol">Futebol</CategoryTag>
+            <CategoryTag type="assista">Assista</CategoryTag>
             <img
               src={ArticleImg3}
               alt="Por que essa mão na bola antes da Copa envolveu até dinheiro"
@@ -171,7 +172,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="nfl">NFL</CategoryTag>
+            <CategoryTag type="ouça">Ouça</CategoryTag>
             <img
               src={ArticleImg4}
               alt="Por que esse gesto mudou a NFL pra sempre"
@@ -191,7 +192,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="nba">NBA</CategoryTag>
+            <CategoryTag type="leia">Leia</CategoryTag>
             <img
               src={ArticleImg5}
               alt="O dia que jogadores e torcedores caíram na porrada"
@@ -211,7 +212,7 @@ const ArticlesFeed = () => {
       <FeedTile highlight>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="nfl">NFL</CategoryTag>
+            <CategoryTag type="ouça">Ouça</CategoryTag>
             <img
               src={ArticleImg4}
               alt="Por que esse gesto mudou a NFL pra sempre"
@@ -226,7 +227,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="futebol">Futebol</CategoryTag>
+            <CategoryTag type="assista">Assista</CategoryTag>
             <img
               src={ArticleImg2}
               alt="Esse é o real motivo de tanto nordestino torcer pra Flamengo e Corinthians"
@@ -249,7 +250,7 @@ const ArticlesFeed = () => {
       <FeedTile>
         <Link to="article/2">
           <figure>
-            <CategoryTag type="nba">NBA</CategoryTag>
+            <CategoryTag type="leia">Leia</CategoryTag>
             <img
               src={ArticleImg5}
               alt="O dia que jogadores e torcedores caíram na porrada"
@@ -324,9 +325,9 @@ const Programs = () => {
   return (
     <ProgramsWrapper>
       <Content>
-        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+        <Row gutter={{ lg: 32 }}>
           <Col lg={6}>
-            <h2>Programas PELEJA</h2>
+            <h2>Escolha o programa</h2>
             <p>
               Voluptatibus nobis architecto doloribus, debitis, sapiente non.
             </p>
@@ -358,10 +359,29 @@ const Programs = () => {
   );
 };
 
+const Stories = () => {
+  return (
+    <StoriesWrapper>
+      <li>
+        <img src={ArticleImg3} alt="No ar" />
+        No ar
+      </li>
+      <li>
+        <img src={ArticleImg4} alt="Últimas" />
+        Últimas
+      </li>
+      <li>
+        <img src={ArticleImg2} alt="Social" />
+        Social
+      </li>
+    </StoriesWrapper>
+  );
+};
+
 const Main = () => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ lg: 32 }}>
         <Col lg={16}>
           <ArticlesFeed />
         </Col>
@@ -377,6 +397,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Content>
+        <Stories />
         <HightlightArticles />
         <Programs />
         <Main />

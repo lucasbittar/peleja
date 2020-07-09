@@ -40,8 +40,8 @@ export const StoriesWrapper = styled.ul`
   @media screen and (min-width: 992px) {
     margin: 2rem auto;
     img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       margin-bottom: 0.8rem;
     }
 
@@ -49,6 +49,25 @@ export const StoriesWrapper = styled.ul`
       font-size: 0.8rem;
     }
   }
+
+  ${(props) =>
+    props.device === 'desktop' &&
+    css`
+      display: none;
+      @media screen and (min-width: 992px) {
+        display: flex;
+        margin-top: 0;
+      }
+    `};
+
+  ${(props) =>
+    props.device === 'mobile' &&
+    css`
+      display: flex;
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    `};
 `;
 
 export const ProgramsWrapper = styled.div`

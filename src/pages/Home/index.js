@@ -66,6 +66,7 @@ const HightlightArticles = () => {
           </Hightlight>
         </Col>
         <Col lg={8}>
+          <Stories device="desktop" />
           <Hightlight secondary>
             <Link to="article/2">
               <figure>
@@ -359,9 +360,9 @@ const Programs = () => {
   );
 };
 
-const Stories = () => {
+const Stories = ({ device }) => {
   return (
-    <StoriesWrapper>
+    <StoriesWrapper device={device}>
       <li>
         <img src={ArticleImg3} alt="No ar" />
         No ar
@@ -397,7 +398,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Content>
-        <Stories />
+        <Stories device="mobile" />
         <HightlightArticles />
         <Programs />
         <Main />

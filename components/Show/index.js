@@ -74,9 +74,7 @@ const Sidebar = ({ articles }) => {
               >
                 <a> 
                   <figure>
-                    {a.fields.category.map((c) => (
-                      <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-                    ))}
+                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
                     <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
                   </figure>
                   <h1>{a.fields.title}</h1>

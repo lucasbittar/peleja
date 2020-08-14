@@ -53,9 +53,7 @@ const Sidebar = ({ articles }) => {
               >
                 <a> 
                   <figure>
-                    {a.fields.category.map((c) => (
-                      <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-                    ))}
+                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
                     <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
                   </figure>
                   <h1>{a.fields.title}</h1>
@@ -97,9 +95,7 @@ const Article = ({ article, articles }) => {
         <Content>
           <Header>
             <ul>
-              {article.fields.category.map((c) => (
-                <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-              ))}
+              <CategoryTag textColor={article.fields.category.fields.textColor} bgColor={article.fields.category.fields.backgroundColor}>{article.fields.category.fields.title}</CategoryTag>
             </ul>
             <h1>{article.fields.title}</h1>
             <h2>{article.fields.shortDescription}</h2>

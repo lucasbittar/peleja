@@ -20,7 +20,9 @@ Index.getInitialProps = async () => {
   try {
     const articles = await api.getEntries({
       content_type: 'article',
-      // 'fields.featuredArticle': false
+      'fields.featuredArticle': false,
+      'fields.category.sys.contentType.sys.id': 'category',
+      'fields.category.fields.slug[ne]': 'assista',
     });
     props = {
       ...props,
@@ -62,7 +64,8 @@ Index.getInitialProps = async () => {
   try {
     const articles = await api.getEntries({
       content_type: 'article',
-      'fields.category[0]': 'assista'
+      'fields.category.sys.contentType.sys.id': 'category',
+      'fields.category.fields.slug[match]': 'assista',
     });
     props = {
       ...props,

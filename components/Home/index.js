@@ -10,8 +10,7 @@ import {
   Highlight,
   FeedTile,
   CategoryTag,
-  ProgramsWrapper,
-  StoriesWrapper,
+  ShowsWrapper,
   VideoTile,
   HightlightsWrapper,
   ArticlesFeedWrapper,
@@ -38,9 +37,7 @@ const HighlightArticles = ({ featured, highlight }) => {
                 </figure>
                 <div>
                   <div>
-                    {highlight.fields.category.map((c) => (
-                      <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-                    ))}
+                    <CategoryTag textColor={highlight.fields.category.fields.textColor} bgColor={highlight.fields.category.fields.backgroundColor}>{highlight.fields.category.fields.title}</CategoryTag>
                   </div>
                   <h1>
                     <span>{highlight.fields.title}</span>
@@ -65,9 +62,7 @@ const HighlightArticles = ({ featured, highlight }) => {
               >
                 <a>
                   <figure>
-                    {a.fields.category.map((c) => (
-                      <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-                    ))}
+                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
                     <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
                   </figure>
                   <h1>{a.fields.title}</h1>
@@ -136,9 +131,7 @@ const ArticlesFeed = ({ articles }) => {
             >
               <a> 
                 <figure>
-                  {a.fields.category.map((c) => (
-                    <CategoryTag textColor={c.fields.textColor} bgColor={c.fields.backgroundColor} key={c.sys.id} type={c.fields.slug}>{c.fields.title}</CategoryTag>
-                  ))}
+                  <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
                   <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
                 </figure>
                 <h1>{a.fields.title}</h1>
@@ -161,7 +154,7 @@ const Sidebar = ({ videos }) => {
       <SectionHeader>
         <h1>Vídeos</h1>
         { videos.map((v) => (
-          <VideoTile>
+          <VideoTile key={v.sys.id}>
             <Link 
               href="/articles/[slug]"
               as={`/articles/${v.fields.slug}`}
@@ -181,9 +174,9 @@ const Sidebar = ({ videos }) => {
   );
 };
 
-const Programs = ({ shows }) => {
+const Shows = ({ shows }) => {
   return (
-    <ProgramsWrapper>
+    <ShowsWrapper>
       <Content>
         <Row gutter={{ lg: 32 }}>
           <Col lg={6}>
@@ -197,9 +190,14 @@ const Programs = ({ shows }) => {
             <ul>
               { shows.map((s) => (
                 <li key={s.sys.id}>
-                  <a href={s.fields.showLink}>
-                    <img src={s.fields.showImage.fields.file.url} alt={s.fields.title} />
-                  </a>
+                  <Link 
+                    href="/shows/[slug]"
+                    as={`/shows/${s.fields.slug}`}
+                  >
+                    <a>
+                      <img src={s.fields.showImage.fields.file.url} alt={s.fields.title} />
+                    </a>
+                  </Link>
                   <p>{s.fields.showDescription}</p>
                 </li>
               ))}
@@ -207,7 +205,7 @@ const Programs = ({ shows }) => {
           </Col>
         </Row>
       </Content>
-    </ProgramsWrapper>
+    </ShowsWrapper>
   );
 };
 
@@ -237,7 +235,7 @@ const Home = ({ articles, featured, highlight, sidebar, shows }) => {
       <Wrapper>
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
-          <Programs shows={shows} />
+          <Shows shows={shows} />
           <Main articles={articles} sidebar={sidebar} />
         </Content>
       </Wrapper>

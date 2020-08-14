@@ -18,6 +18,18 @@ export const ArticlesContentWrapper = styled.article`
     color: ${darken(0.3, '#f4e229')};
   }
 
+  h4 {
+    font-family: ${fontSansSerif};
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid #f4e229;
+    margin-bottom: 1.5rem;
+  }
+
   blockquote {
     font-family: ${fontSansSerif};
     margin: 2rem 0 4rem;

@@ -80,7 +80,7 @@ export const StoriesWrapper = styled.ul`
     `};
 `;
 
-export const ProgramsWrapper = styled.div`
+export const ShowsWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1110px;
@@ -175,6 +175,10 @@ export const CategoryTag = styled.small`
   margin-bottom: 0.4rem;
   color: ${(props) => props.textColor};
   background-color: ${(props) => props.bgColor};
+
+  a {
+    color: ${(props) => props.textColor};
+  }
 `;
 
 export const MainWrapper = styled.div`
@@ -224,6 +228,115 @@ export const HightlightsWrapper = styled.div`
     margin-top: 2rem;
     padding-bottom: 3rem;
   }
+`;
+
+export const EpisodesList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.5rem;
+`;
+
+export const EpisodeTile = styled.li`
+  height: auto;
+  padding: 1rem;
+  background: #f4f4f4;
+  a {
+    height: auto;
+    min-height: auto;
+    display: block;
+    position: relative;
+
+    figure {
+      position: relative;
+      float: left;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+
+      &:before {
+        content: none;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      small {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        font-size: 0.6rem;
+
+        @media screen and (min-width: 992px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    &:before {
+      content: none;
+    }
+
+    h1 {
+      font-size: 0.9rem;
+      text-transform: none;
+      font-family: ${fontSansSerif};
+      color: ${(props) => props.showColor};
+      font-weight: 700;
+      transition: all 300ms ease-out;
+
+      @media screen and (min-width: 992px) {
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.3;
+      opacity: 0.8;
+      display: none;
+
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
+    }
+
+    span {
+      font-family: ${fontSansSerif};
+      font-size: 0.6rem;
+      position: absolute;
+      strong {
+        color: ${darken(0.3, '#f4e229')};
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    &:hover {
+      h1 {
+        color: ${darken(0.3, '#111')};
+      }
+    }
+  }
+
+  /*
+  &:nth-child(3n) {
+    a {
+      position: relative;
+      figure {
+        margin-right: 0.8rem;
+        margin-bottom: 1.2rem;
+        width: 100%;
+      }
+      h1,
+      span {
+        // position: absolute;
+      }
+    }
+  }
+  */
 `;
 
 export const FeedTile = styled.li`

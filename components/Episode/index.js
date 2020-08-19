@@ -5,12 +5,11 @@ import marked from 'marked';
 
 import Layout from '../../layouts/Main';
 
+import Sidebar from '../Sidebar';
+
 import {
   Content,
-  FeedTile,
   CategoryTag,
-  SidebarWrapper,
-  SectionHeader,
   MainWrapper,
   Wrapper,
 } from '../Layout';
@@ -25,7 +24,7 @@ const getParsedMarkdown = (content) => {
   }
 }
 
-const ArticlesContent = ({ content }) => {
+const PageContent = ({ content }) => {
   return (
     <ArticlesContentWrapper>
       <Header>
@@ -38,44 +37,12 @@ const ArticlesContent = ({ content }) => {
   );
 };
 
-const Sidebar = ({ articles }) => {
-  return (
-    <SidebarWrapper>
-      <SectionHeader>
-        <h1>Mais Vistos</h1>
-        <ul>
-          { articles.map((a) => (
-            <FeedTile key={a.sys.id} small>
-              <Link 
-                href="/articles/[slug]"
-                as={`/articles/${a.fields.slug}`}
-              >
-                <a> 
-                  <figure>
-                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
-                    <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
-                  </figure>
-                  <h1>{a.fields.title}</h1>
-                  <p>{a.fields.shortDescription}</p>
-                  <span>
-                    por <strong>{a.fields.articleAuthor.fields.name}</strong> | <strong>{moment(a.sys.createdAt).format('D [de] MMMM')}</strong>
-                  </span>
-                </a>
-              </Link>
-            </FeedTile>
-          ))}
-        </ul>
-      </SectionHeader>
-    </SidebarWrapper>
-  );
-};
-
 const Main = ({ content, articles }) => {
   return (
     <MainWrapper>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
-          <ArticlesContent content={content} />
+          <PageContent content={content} />
         </Col>
         <Col lg={8}>
           <Sidebar articles={articles} />

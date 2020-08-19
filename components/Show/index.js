@@ -2,16 +2,15 @@ import moment from 'moment';
 import Link from 'next/link';
 import { Row, Col } from 'antd';
 
+import Sidebar from '../Sidebar';
+
 import Layout from '../../layouts/Main';
 
 import {
   Content,
-  FeedTile,
   EpisodeTile,
   EpisodesList,
   CategoryTag,
-  SidebarWrapper,
-  SectionHeader,
   MainWrapper,
   Wrapper,
 } from '../Layout';
@@ -57,38 +56,6 @@ const ArticlesContent = ({ content, episodes }) => {
         )}
       </EpisodesList>
     </ArticlesContentWrapper>
-  );
-};
-
-const Sidebar = ({ articles }) => {
-  return (
-    <SidebarWrapper>
-      <SectionHeader>
-        <h1>Mais Vistos</h1>
-        <ul>
-          { articles.map((a) => (
-            <FeedTile key={a.sys.id} small>
-              <Link 
-                href="/articles/[slug]"
-                as={`/articles/${a.fields.slug}`}
-              >
-                <a> 
-                  <figure>
-                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
-                    <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
-                  </figure>
-                  <h1>{a.fields.title}</h1>
-                  <p>{a.fields.shortDescription}</p>
-                  <span>
-                    por <strong>{a.fields.articleAuthor.fields.name}</strong> | <strong>{moment(a.sys.createdAt).format('D [de] MMMM')}</strong>
-                  </span>
-                </a>
-              </Link>
-            </FeedTile>
-          ))}
-        </ul>
-      </SectionHeader>
-    </SidebarWrapper>
   );
 };
 

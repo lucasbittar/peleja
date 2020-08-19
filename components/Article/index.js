@@ -3,14 +3,13 @@ import Link from 'next/link';
 import { Row, Col } from 'antd';
 import marked from 'marked';
 
+import Sidebar from '../Sidebar';
+
 import Layout from '../../layouts/Main';
 
 import {
   Content,
-  FeedTile,
   CategoryTag,
-  SidebarWrapper,
-  SectionHeader,
   MainWrapper,
   Wrapper,
 } from '../Layout';
@@ -39,38 +38,6 @@ const ArticlesContent = ({ content }) => {
   );
 };
 
-const Sidebar = ({ articles }) => {
-  return (
-    <SidebarWrapper>
-      <SectionHeader>
-        <h1>Mais Vistos</h1>
-        <ul>
-          { articles.map((a) => (
-            <FeedTile key={a.sys.id} small>
-              <Link 
-                href="/articles/[slug]"
-                as={`/articles/${a.fields.slug}`}
-              >
-                <a> 
-                  <figure>
-                    <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
-                    <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
-                  </figure>
-                  <h1>{a.fields.title}</h1>
-                  <p>{a.fields.shortDescription}</p>
-                  <span>
-                    por <strong>{a.fields.articleAuthor.fields.name}</strong> | <strong>{moment(a.sys.createdAt).format('D [de] MMMM')}</strong>
-                  </span>
-                </a>
-              </Link>
-            </FeedTile>
-          ))}
-        </ul>
-      </SectionHeader>
-    </SidebarWrapper>
-  );
-};
-
 const Main = ({ content, articles }) => {
   return (
     <MainWrapper>
@@ -87,15 +54,20 @@ const Main = ({ content, articles }) => {
 }
 
 const Article = ({ article, articles }) => {
-  console.log('ARTICLE', article);
-  console.log('ARTICLES', articles);
   return (
     <Layout title={`${article.fields.title} | PELEJA`}>
       <Wrapper>
         <Content>
           <Header>
             <ul>
-              <CategoryTag textColor={article.fields.category.fields.textColor} bgColor={article.fields.category.fields.backgroundColor}>{article.fields.category.fields.title}</CategoryTag>
+              <Link 
+                href="/category/[slug]"
+                as={`/category/${article.fields.category.fields.slug}`}
+              >
+                <a>
+                  <CategoryTag textColor={article.fields.category.fields.textColor} bgColor={article.fields.category.fields.backgroundColor}>{article.fields.category.fields.title}</CategoryTag>
+                </a>
+              </Link>
             </ul>
             <h1>{article.fields.title}</h1>
             <h2>{article.fields.shortDescription}</h2>

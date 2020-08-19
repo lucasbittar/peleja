@@ -4,11 +4,12 @@ import Layout from '../../layouts/Main';
 import { Row, Col } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
 
+import FeedTile from '../FeedTile';
+
 import {
   Wrapper,
   Content,
   Highlight,
-  FeedTile,
   CategoryTag,
   ShowsWrapper,
   VideoTile,
@@ -74,42 +75,6 @@ const HighlightArticles = ({ featured, highlight }) => {
               </Link>
             </Highlight>
           ))}
-          {/*
-          <Hightlight secondary small>
-            <Link href="article/2">
-              <a>
-                <figure>
-                  <CategoryTag type="leia">Leia</CategoryTag>
-                  <img
-                    src="/assets/article-img-5.jpg"
-                    alt="O dia que jogadores e torcedores caíram na porrada"
-                  />
-                </figure>
-                <h1>O dia que jogadores e torcedores caíram na porrada</h1>
-                <span>
-                  por <strong>Murilo Megale</strong>
-                </span>
-              </a>
-            </Link>
-          </Hightlight>
-          <Hightlight secondary small>
-            <Link href="article/2">
-              <a>
-                <figure>
-                  <CategoryTag type="ouça">Ouça</CategoryTag>
-                  <img
-                    src="/assets/article-img-4.jpg"
-                    alt="Por que esse gesto mudou a NFL pra sempre"
-                  />
-                </figure>
-                <h1>Por que esse gesto mudou a NFL pra sempre</h1>
-                <span>
-                  por <strong>Murilo Megale</strong>
-                </span>
-              </a>
-            </Link>
-          </Hightlight>
-          */}
         </Col>
       </Row>
     </HightlightsWrapper>
@@ -124,24 +89,7 @@ const ArticlesFeed = ({ articles }) => {
       </SectionHeader>
       <ul>
         { articles.map((a) => (
-          <FeedTile key={a.sys.id}>
-            <Link 
-              href="/articles/[slug]"
-              as={`/articles/${a.fields.slug}`}
-            >
-              <a> 
-                <figure>
-                  <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
-                  <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
-                </figure>
-                <h1>{a.fields.title}</h1>
-                <p>{a.fields.shortDescription}</p>
-                <span>
-                  por <strong>{a.fields.articleAuthor.fields.name}</strong> | <strong>{moment(a.sys.createdAt).format('D [de] MMMM')}</strong>
-                </span>
-              </a>
-            </Link>
-          </FeedTile>
+          <FeedTile data={a} key={a.sys.id} />
         ))}
       </ul>
     </ArticlesFeedWrapper>

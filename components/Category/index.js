@@ -53,7 +53,7 @@ const Category = ({ category, articles, sidebar }) => {
   console.log('ARTICLES', articles);
   console.log('SIDEBAR', sidebar);
   return (
-    <Layout title={`Categoria | PELEJA`}>
+    <Layout title={`${category.fields.title} | PELEJA`}>
       <Wrapper>
         <Content>
           <Header>

@@ -14,13 +14,15 @@ import {
   Wrapper,
 } from '../Layout';
 
+import { Header } from '../Article/styles';
+
 moment.locale('pt-BR');
 
 const ArticlesFeed = ({ category, articles }) => {
   return (
     <ArticlesFeedWrapper>
       <SectionHeader>
-        <h1>Publicações em {category.fields.title}</h1>
+        <h1>{articles.length} Publicações em {category.fields.title}</h1>
       </SectionHeader>
       <ul>
         { articles.map((a) => (
@@ -54,7 +56,9 @@ const Category = ({ category, articles, sidebar }) => {
     <Layout title={`Categoria | PELEJA`}>
       <Wrapper>
         <Content>
-          <h1></h1>
+          <Header>
+            <h1>{category.fields.title}</h1>
+          </Header>
           <Main category={category} articles={articles} sidebar={sidebar} />
         </Content>
       </Wrapper>

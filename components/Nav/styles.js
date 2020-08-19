@@ -77,6 +77,10 @@ export const Wrapper = styled.nav`
     opacity: 0.7;
     transition: all 300ms ease-out;
 
+    a {
+      color: #fff;
+    }
+
     &:hover {
       opacity: 1;
     }

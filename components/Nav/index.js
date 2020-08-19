@@ -23,9 +23,9 @@ export default function Nav() {
         </Link>
         <aside>
           <ul className="nav-desktop">
-            <li>Leia</li>
-            <li>Assista</li>
-            <li>Ouça</li>
+            <li><Link href="/category/leia"><a>Leia</a></Link></li>
+            <li><Link href="/category/assista"><a>Assista</a></Link></li>
+            <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
             <li>Compre</li>
             <li>Fale</li>
             <li>

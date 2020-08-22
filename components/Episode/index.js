@@ -26,12 +26,14 @@ const getParsedMarkdown = (content) => {
 
 const PageContent = ({ content }) => {
   return (
-    <ArticlesContentWrapper>
+    <ArticlesContentWrapper episode>
+      {/*
       <Header>
         <figure>
           <img src={content.fields.featuredImage.fields.file.url} alt={content.fields.title} />
         </figure>
       </Header>
+      */}
       <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} />
     </ArticlesContentWrapper>
   );
@@ -68,7 +70,7 @@ const Episode = ({ episode, articles }) => {
                 </a>
               </Link>
             </CategoryTag>
-            <h1>{episode.fields.title}</h1>
+            <h1>#{episode.fields.episodeNumber} - {episode.fields.title}</h1>
             <h2>{episode.fields.shortDescription}</h2>
             <div>
               <span>

@@ -8,7 +8,11 @@ export const FeedTileWrapper = styled.li`
   margin-bottom: 1.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
-  min-height: 125px;
+  min-height: 100px;
+
+  @media screen and (min-width: 992px) {
+    min-height: 160px;
+  }
   &:last-child {
     margin: 0;
   }
@@ -40,6 +44,11 @@ export const FeedTileWrapper = styled.li`
       img {
         width: 100%;
         object-fit: cover;
+        height: 80px;
+
+        @media screen and (min-width: 992px) {
+          height: 124px;
+        }
       }
 
       small {
@@ -109,6 +118,10 @@ export const FeedTileWrapper = styled.li`
         margin-right: 0.8rem;
         margin-bottom: 1.2rem;
         width: 100%;
+
+        img {
+          height: auto;
+        }
       }
       h1,
       span {

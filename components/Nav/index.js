@@ -24,26 +24,36 @@ export default function Nav() {
         <aside>
           <ul className="nav-desktop">
             <li><Link href="/category/leia"><a>Leia</a></Link></li>
-            <li><Link href="/category/assista"><a>Assista</a></Link></li>
+            <li><Link href="/shows"><a>Assista</a></Link></li>
             <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
-            <li>Compre</li>
             <li>Fale</li>
+            {/*
+            <li>Compre</li>
+            */}
             <li>
               <SearchOutlined style={{ color: '#fff', marginLeft: '1rem' }} />
             </li>
           </ul>
           <ul>
             <li>
-              <InstagramOutlined />
+              <a href="http://instagram.com/tudopeleja" target="_blank">
+                <InstagramOutlined />
+              </a>
             </li>
             <li>
-              <FacebookOutlined />
+              <a href="http://facebook.com/tudopeleja" target="_blank">
+                <FacebookOutlined />
+              </a>
             </li>
             <li>
-              <YoutubeOutlined />
+              <a href="http://youtube.com/peleja" target="_blank">
+                <YoutubeOutlined />
+              </a>
             </li>
             <li>
-              <TwitterOutlined />
+              <a href="http://twitter.com/tudopeleja" target="_blank">
+                <TwitterOutlined />
+              </a>
             </li>
           </ul>
           <div>

@@ -96,23 +96,26 @@ const ArticlesFeed = ({ articles }) => {
   )
 };
 
-const Sidebar = ({ videos }) => {
+const Sidebar = ({ episodes }) => {
   return (
     <SidebarWrapper>
       <SectionHeader>
-        <h1>Vídeos</h1>
-        { videos.map((v) => (
-          <VideoTile key={v.sys.id}>
+        <h1>Assista</h1>
+        { episodes.map((e) => (
+          <VideoTile key={e.sys.id}>
             <Link 
-              href="/articles/[slug]"
-              as={`/articles/${v.fields.slug}`}
+              href="/shows/[slug]/episode/[episode]"
+              as={`/shows/${e.fields.show.fields.slug}/episode/${e.fields.slug}`}
             >
               <a>
                 <figure>
                   <PlayCircleOutlined />
-                  <img src={v.fields.featuredImage.fields.file.url} alt={v.fields.title} />
+                  <img src={e.fields.featuredImage.fields.file.url} alt={e.fields.title} />
+                  <CategoryTag textColor={e.fields.show.fields.textColor} bgColor={e.fields.show.fields.bgColor}>
+                    {e.fields.show.fields.title}
+                  </CategoryTag>
                 </figure>
-                <h1>{v.fields.title}</h1>
+                <h1>#{e.fields.episodeNumber} - {e.fields.title}</h1>
               </a>
             </Link>
           </VideoTile>
@@ -165,18 +168,18 @@ const Main = ({ articles, sidebar }) => {
           <ArticlesFeed articles={articles} />
         </Col>
         <Col lg={8}>
-          <Sidebar videos={sidebar} />
+          <Sidebar episodes={sidebar} />
         </Col>
       </Row>
     </MainWrapper>
   );
 };
 
-const Home = ({ articles, featured, highlight, sidebar, shows }) => {
-  console.log('ARTICLES', articles);
-  console.log('FEATURED', featured);
-  console.log('HIGHLIGHT', highlight);
-  console.log('SIDEBAR', sidebar);
+const Home = ({ articles, featured, highlight, episodes, shows }) => {
+  // console.log('ARTICLES', articles);
+  // console.log('FEATURED', featured);
+  // console.log('HIGHLIGHT', highlight);
+  console.log('episodes', episodes);
   console.log('SHOWS', shows);
   return (
     <Layout title="PELEJA">
@@ -184,7 +187,7 @@ const Home = ({ articles, featured, highlight, sidebar, shows }) => {
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
           <Shows shows={shows} />
-          <Main articles={articles} sidebar={sidebar} />
+          <Main articles={articles} sidebar={episodes} />
         </Content>
       </Wrapper>
     </Layout>

@@ -2,20 +2,20 @@ import Home from '../components/Home';
 
 import api from '../api';
 
-const Index = ({ articles, featured, highlight, sidebar, shows }) => {
+const Index = ({ articles, featured, highlight, episodes, shows }) => {
   return (
     <Home
       articles={articles}
       featured={featured}
       highlight={highlight}
-      sidebar={sidebar}
+      episodes={episodes}
       shows={shows}
     />
   );
 };
 
 Index.getInitialProps = async () => {
-  let props = { articles: [], featured: [], highlight: [], sidebar: [], shows: [] };
+  let props = { articles: [], featured: [], highlight: [], episodes: [], shows: [] };
 
   try {
     const articles = await api.getEntries({
@@ -62,14 +62,13 @@ Index.getInitialProps = async () => {
   }
 
   try {
-    const articles = await api.getEntries({
-      content_type: 'article',
-      'fields.category.sys.contentType.sys.id': 'category',
-      'fields.category.fields.slug[match]': 'assista',
+    const episodes = await api.getEntries({
+      content_type: 'episode',
+      limit: 10
     });
     props = {
       ...props,
-      sidebar: articles.items,
+      episodes: episodes.items,
     };
   } catch (err) {
     console.log('Something went wrong');

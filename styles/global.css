@@ -20,6 +20,9 @@ body {
 body {
   font: 16px 'Crimson Text', serif;
 }
+footer a:hover {
+  color: #fff;
+}
 footer {
   background: #111;
   color: #fff;
@@ -60,6 +63,9 @@ footer ul li {
   font-size: 0.6rem;
   transition: all 300ms ease-out;
 }
+footer ul li a {
+  color: #fff;
+}
 @media screen and (min-width: 992px) {
   footer ul li {
     font-size: 1rem;
@@ -80,6 +86,9 @@ button {
 }
 .ant-col {
   margin-top: 1rem;
+}
+.embedly-card {
+  margin-top: 2rem;
 }
 @media screen and (min-width: 992px) {
   .ant-col {

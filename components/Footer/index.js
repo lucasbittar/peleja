@@ -1,4 +1,5 @@
 import { Col, Row } from 'antd';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -20,11 +21,10 @@ const Footer = () => {
         </Row>
         <Row>
           <ul>
-            <li>Leia</li>
-            <li>Assista</li>
-            <li>Ouça</li>
-            <li>Compre</li>
-            <li>Fale</li>
+            <li><Link href="/category/leia"><a>Leia</a></Link></li>
+            <li><Link href="/shows"><a>Assista</a></Link></li>
+            <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
+            <li><Link href="/category/ouca"><a>Fale</a></Link></li>
           </ul>
         </Row>
       </div>

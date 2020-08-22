@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
 import { fontSansSerif } from '../Layout';
@@ -28,6 +28,10 @@ export const ArticlesContentWrapper = styled.article`
     border: none;
     border-bottom: 1px solid #f4e229;
     margin-bottom: 1.5rem;
+  }
+
+  img {
+    width: 100%;
   }
 
   blockquote {
@@ -69,6 +73,10 @@ export const ArticlesContentWrapper = styled.article`
       }
     }
   }
+
+  ${(props) => props.episode && css`
+      margin-top: 0;
+  `};
 
   @media screen and (min-width: 992px) {
     h2 {

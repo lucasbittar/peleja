@@ -296,6 +296,7 @@ export const EpisodeTile = styled.li`
       line-height: 1.3;
       opacity: 0.8;
       display: none;
+      color: #111;
 
       @media screen and (min-width: 992px) {
         display: block;
@@ -513,6 +514,14 @@ export const VideoTile = styled.div`
         border-radius: 50%;
         padding: 0.5rem;
       }
+
+      small {
+        top: 0.5rem;
+        right: 0.5rem;
+        position: absolute;
+        font-size: 0.8rem;
+      }
+
     }
 
     &:before {

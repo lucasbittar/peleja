@@ -55,6 +55,7 @@ footer ul {
   margin-top: 1.5rem;
   margin-bottom: 0;
 }
+.nav-drawer ul li,
 footer ul li {
   margin-right: 1rem;
   text-transform: uppercase;
@@ -63,6 +64,7 @@ footer ul li {
   font-size: 0.6rem;
   transition: all 300ms ease-out;
 }
+.nav-drawer ul li a,
 footer ul li a {
   color: #fff;
 }
@@ -89,6 +91,65 @@ button {
 }
 .embedly-card {
   margin-top: 2rem;
+}
+.nav-drawer .ant-drawer-content {
+  background: #000;
+}
+
+.nav-drawer .ant-drawer-content-wrapper {
+  width: 100vw !important;
+}
+
+.nav-drawer svg {
+  cursor: pointer;
+}
+
+.nav-drawer-desktop .ant-drawer-content-wrapper {
+  width: 100% !important;
+  max-width: 380px;
+}
+.nav-drawer .ant-drawer-title div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-drawer .ant-drawer-content .drawer-items a {
+  display: block;
+  color: #f406dc;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #111;
+  opacity: 0.7;
+  transition: all 300ms ease-out;
+}
+
+.nav-drawer .ant-drawer-content .drawer-items a:hover {
+  opacity: 1;
+}
+
+.nav-drawer .ant-drawer-header {
+  background: #111;
+  border: none;
+  height: 3.5rem;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-drawer .ant-drawer-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drawer .ant-drawer-title {
+  color: #fff;
+  font-size: 0.8rem;
+  width: 100%;
 }
 @media screen and (min-width: 992px) {
   .ant-col {

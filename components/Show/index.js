@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Row, Col } from 'antd';
 
 import Sidebar from '../Sidebar';
+import Pagination from '../Pagination';
 
 import Layout from '../../layouts/Main';
 
@@ -19,7 +20,7 @@ import { Header, ArticlesContentWrapper } from '../Article/styles';
 
 moment.locale('pt-BR');
 
-const ArticlesContent = ({ content, episodes }) => {
+const ArticlesContent = ({ content, episodes, page, total }) => {
   return (
     <ArticlesContentWrapper>
       <Header>
@@ -55,16 +56,17 @@ const ArticlesContent = ({ content, episodes }) => {
           <small>Nenhum episódio publicado ainda.</small>
         )}
       </EpisodesList>
+      <Pagination page={page} total={total} />
     </ArticlesContentWrapper>
   );
 };
 
-const Main = ({ content, articles, episodes }) => {
+const Main = ({ content, articles, episodes, page, total }) => {
   return (
     <MainWrapper>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
-          <ArticlesContent content={content} episodes={episodes} />
+          <ArticlesContent content={content} episodes={episodes} page={page} total={total} />
         </Col>
         <Col lg={8}>
           <Sidebar articles={articles} />
@@ -74,7 +76,7 @@ const Main = ({ content, articles, episodes }) => {
   )
 }
 
-const Show = ({ show, episodes, articles }) => {
+const Show = ({ show, episodes, articles, page, total }) => {
   console.log('EPI', episodes);
   return (
     <Layout title={`${show.fields.title} | PELEJA`}>
@@ -84,7 +86,7 @@ const Show = ({ show, episodes, articles }) => {
             <h1>{show.fields.title}</h1>
             <h2>{show.fields.shortDescription}</h2>
           </Header>
-          <Main content={show} articles={articles} episodes={episodes} />
+          <Main content={show} articles={articles} episodes={episodes} page={page} total={total} />
         </Content>
       </Wrapper>
     </Layout>

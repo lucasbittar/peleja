@@ -4,20 +4,20 @@ import api from '../../../api';
 
 import Show from '../../../components/Show';
 
-const ShowDetails = ({ show, episodes, articles }) => {
+const ShowDetails = ({ show, episodes, articles, page, total }) => {
   return (
     <>
       <Head>
         <meta property="og:image" content={show.fields.showImage.fields.file.url} />
       </Head>
-      <Show show={show} articles={articles} episodes={episodes} />
+      <Show show={show} articles={articles} episodes={episodes} page={page} total={total} />
     </>
   );
 };
 
 ShowDetails.getInitialProps = async ({ query }) => {
   /* Fetch article info */
-  let props = { show: null, episodes: [], articles: [] };
+  let props = { show: null, episodes: [], articles: [], total: null, page: query.page };
 
   try {
     const shows = await api.getEntries({
@@ -49,10 +49,13 @@ ShowDetails.getInitialProps = async ({ query }) => {
       content_type: 'episode',
       'fields.show.sys.contentType.sys.id': 'show',
       'fields.show.fields.slug[match]': query.slug,
-      order: '-fields.episodeNumber'
+      order: '-fields.episodeNumber',
+      limit: 12,
+      skip: query.page ? query.page * 12 : 0
     });
     props = {
       ...props,
+      total: episodes.total,
       episodes: episodes.items,
     };
   } catch (err) {

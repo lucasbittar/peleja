@@ -34,7 +34,7 @@ ShowsList.getInitialProps = async ({ query }) => {
     const episodes = await api.getEntries({
       content_type: 'episode',
       limit: 12,
-      skip: query.page ? query.page * 10 : 0
+      skip: query.page ? query.page * 12 : 0
     });
     props = {
       ...props,

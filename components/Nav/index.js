@@ -7,11 +7,25 @@ import {
   YoutubeOutlined,
   FacebookOutlined,
   TwitterOutlined,
+  CloseOutlined,
   SearchOutlined,
   MenuOutlined,
 } from '@ant-design/icons';
 
 import { Wrapper } from './styles';
+
+const NavTitle = ({ onClose }) => {
+  return (
+    <>
+      <Link href="/">
+        <a title="Home">
+          <img src="/assets/logo-white.png" alt="PELEJA" />
+        </a>
+      </Link>
+      <CloseOutlined onClick={() => onClose()} />
+    </>
+  );
+}
 
 const NavItems = () => {
   return (
@@ -78,10 +92,10 @@ export default function Nav() {
         </aside>
       </div>
       <Drawer
-        title="PELEJA"
+        title={<NavTitle onClose={onClose} />}
         className="nav-drawer"
         placement="right"
-        closable={true}
+        closable={false}
         onClose={onClose}
         visible={visible}
       >

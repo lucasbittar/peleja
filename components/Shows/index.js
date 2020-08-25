@@ -6,6 +6,7 @@ import { PlayCircleOutlined } from '@ant-design/icons';
 import Layout from '../../layouts/Main';
 
 import Sidebar from '../Sidebar';
+import Pagination from '../Pagination';
 
 import {
   ArticlesFeedWrapper,
@@ -22,11 +23,11 @@ import { Header } from '../Article/styles';
 
 moment.locale('pt-BR');
 
-const EpisodesFeed = ({ episodes }) => {
+const EpisodesFeed = ({ episodes, page, total }) => {
   return (
     <ArticlesFeedWrapper episodes>
       <SectionHeader>
-        <h1>{episodes.length} Episódios</h1>
+        <h1>{total} Episódios</h1>
       </SectionHeader>
       <EpisodesList>
         { episodes.map((e) => (
@@ -50,16 +51,17 @@ const EpisodesFeed = ({ episodes }) => {
           </EpisodeTile>
         ))}
       </EpisodesList>
+      <Pagination page={page} total={total} />
     </ArticlesFeedWrapper>
   )
 };
 
-const Main = ({ sidebar, episodes }) => {
+const Main = ({ sidebar, episodes, page, total }) => {
   return (
     <MainWrapper>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
-          <EpisodesFeed episodes={episodes} />
+          <EpisodesFeed episodes={episodes} page={page} total={total} />
         </Col>
         <Col lg={8}>
           <Sidebar articles={sidebar} />
@@ -69,9 +71,10 @@ const Main = ({ sidebar, episodes }) => {
   )
 }
 
-const Shows = ({ articles, episodes }) => {
+const Shows = ({ articles, episodes, total, page }) => {
   console.log('ARTICLES', articles);
   console.log('EPISODES', episodes);
+  console.log('PAGE', total, page);
   return (
     <Layout title={`Assista | PELEJA`}>
       <Wrapper>
@@ -79,7 +82,7 @@ const Shows = ({ articles, episodes }) => {
           <Header>
             <h1>Assista</h1>
           </Header>
-          <Main episodes={episodes} sidebar={articles} />
+          <Main episodes={episodes} sidebar={articles} page={page} total={total} />
         </Content>
       </Wrapper>
     </Layout>

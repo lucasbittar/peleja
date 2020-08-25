@@ -2,17 +2,20 @@ import Shows from '../../components/Shows';
 
 import api from '../../api';
 
-const ShowsList = ({ episodes, articles }) => {
+const ShowsList = ({ episodes, articles, total, page }) => {
   return (
     <Shows
+      total={total}
+      page={page}
       articles={articles}
       episodes={episodes}
     />
   );
 };
 
-ShowsList.getInitialProps = async () => {
-  let props = { articles: [], episodes: [] };
+ShowsList.getInitialProps = async ({ query }) => {
+  let props = { articles: [], episodes: [], total: null, page: query.page };
+  console.log('QUERY', query);
 
   try {
     const articles = await api.getEntries({
@@ -30,10 +33,12 @@ ShowsList.getInitialProps = async () => {
   try {
     const episodes = await api.getEntries({
       content_type: 'episode',
-      limit: 20
+      limit: 12,
+      skip: query.page ? query.page * 10 : 0
     });
     props = {
       ...props,
+      total: episodes.total,
       episodes: episodes.items,
     };
   } catch (err) {

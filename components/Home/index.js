@@ -125,17 +125,15 @@ const Sidebar = ({ episodes }) => {
   );
 };
 
-const Shows = ({ shows }) => {
+const Shows = ({ shows, showsInfo }) => {
   return (
     <ShowsWrapper>
       <Content>
         <Row gutter={{ lg: 32 }}>
           <Col lg={6}>
-            <h2>Escolha o programa</h2>
-            <p>
-              Voluptatibus nobis architecto doloribus, debitis, sapiente non.
-            </p>
-            <a href="/">Todos os programas</a>
+            <h2>{showsInfo.fields.title}</h2>
+            <p>{showsInfo.fields.description}</p>
+              <Link href="/shows"><a>Todos os programas</a></Link>
           </Col>
           <Col lg={18}>
             <ul>
@@ -175,18 +173,19 @@ const Main = ({ articles, sidebar }) => {
   );
 };
 
-const Home = ({ articles, featured, highlight, episodes, shows }) => {
+const Home = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
   // console.log('ARTICLES', articles);
   // console.log('FEATURED', featured);
   // console.log('HIGHLIGHT', highlight);
-  console.log('episodes', episodes);
-  console.log('SHOWS', shows);
+  // console.log('episodes', episodes);
+  // console.log('SHOWS', shows);
+  // console.log('SHOWS INFO', showsInfo);
   return (
     <Layout title="PELEJA">
       <Wrapper>
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
-          <Shows shows={shows} />
+          <Shows shows={shows} showsInfo={showsInfo} />
           <Main articles={articles} sidebar={episodes} />
         </Content>
       </Wrapper>

@@ -2,7 +2,7 @@ import Home from '../components/Home';
 
 import api from '../api';
 
-const Index = ({ articles, featured, highlight, episodes, shows }) => {
+const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
   return (
     <Home
       articles={articles}
@@ -10,12 +10,13 @@ const Index = ({ articles, featured, highlight, episodes, shows }) => {
       highlight={highlight}
       episodes={episodes}
       shows={shows}
+      showsInfo={showsInfo}
     />
   );
 };
 
 Index.getInitialProps = async () => {
-  let props = { articles: [], featured: [], highlight: [], episodes: [], shows: [] };
+  let props = { articles: [], featured: [], highlight: [], episodes: [], shows: [], showsInfo: null };
 
   try {
     const articles = await api.getEntries({
@@ -56,6 +57,19 @@ Index.getInitialProps = async () => {
     props = {
       ...props,
       highlight: articles.items[0],
+    };
+  } catch (err) {
+    console.log('Something went wrong');
+  }
+
+  try {
+    const showsInfo = await api.getEntries({
+      content_type: 'showsHome',
+      limit: 1
+    });
+    props = {
+      ...props,
+      showsInfo: showsInfo.items[0],
     };
   } catch (err) {
     console.log('Something went wrong');

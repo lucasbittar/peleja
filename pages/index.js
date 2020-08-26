@@ -1,6 +1,7 @@
 import Home from '../components/Home';
 
 import api from '../api';
+import { SIDEBAR_LIMIT } from '../api/constants';
 
 const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
   return (
@@ -78,7 +79,7 @@ Index.getInitialProps = async () => {
   try {
     const episodes = await api.getEntries({
       content_type: 'episode',
-      limit: 10
+      limit: SIDEBAR_LIMIT
     });
     props = {
       ...props,

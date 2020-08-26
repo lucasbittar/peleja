@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import api from '../../../api';
+import { SIDEBAR_LIMIT } from '../../../api/constants';
 
 import Show from '../../../components/Show';
 
@@ -35,6 +36,7 @@ ShowDetails.getInitialProps = async ({ query }) => {
   try {
     const articles = await api.getEntries({
       content_type: 'article',
+      limit: SIDEBAR_LIMIT
     });
     props = {
       ...props,

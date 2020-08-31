@@ -60,7 +60,6 @@ footer ul li {
   margin-right: 1rem;
   text-transform: uppercase;
   font-family: 'Exo 2', sans-serif;
-  opacity: 0.5;
   font-size: 0.6rem;
   transition: all 300ms ease-out;
 }
@@ -77,6 +76,10 @@ footer ul li a {
   footer ul li {
     font-size: 1rem;
     margin-right: 2rem;
+  }
+  .nav-drawer ul li,
+  footer ul li {
+    opacity: 0.5;
   }
 }
 footer ul li:hover {

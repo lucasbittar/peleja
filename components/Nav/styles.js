@@ -74,15 +74,17 @@ export const Wrapper = styled.nav`
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
-    opacity: 0.7;
-    transition: all 300ms ease-out;
 
     a {
+      transition: all 300ms ease-out;
       color: #fff;
+      opacity: 0.7;
     }
 
     &:hover {
-      opacity: 1;
+      a {
+        opacity: 1;
+      }
     }
   }
 

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Drawer } from 'antd';
 
+import SearchBar from '../SearchBar';
+
 import {
   InstagramOutlined,
   YoutubeOutlined,
   FacebookOutlined,
   TwitterOutlined,
   CloseOutlined,
-  SearchOutlined,
   MenuOutlined,
 } from '@ant-design/icons';
 
@@ -39,7 +40,7 @@ const NavItems = () => {
         <li>Compre</li>
         */}
         <li>
-          <SearchOutlined style={{ color: '#fff', marginLeft: '1rem' }} />
+          <SearchBar />
         </li>
       </ul>
       <ul>

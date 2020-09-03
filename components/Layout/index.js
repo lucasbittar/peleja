@@ -119,7 +119,6 @@ export const ShowsWrapper = styled.div`
   }
 
   ul {
-    overflow-x: auto;
     flex-wrap: nowrap;
     display: -webkit-box;
 

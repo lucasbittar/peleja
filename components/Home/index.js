@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Layout from '../../layouts/Main';
 import { Row, Col } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import FeedTile from '../FeedTile';
 
@@ -136,21 +137,23 @@ const Shows = ({ shows, showsInfo }) => {
               <Link href="/shows"><a>Todos os programas</a></Link>
           </Col>
           <Col lg={18}>
-            <ul>
-              { shows.map((s) => (
-                <li key={s.sys.id}>
-                  <Link 
-                    href="/shows/[slug]"
-                    as={`/shows/${s.fields.slug}`}
-                  >
-                    <a>
-                      <img src={s.fields.showImage.fields.file.url} alt={s.fields.title} />
-                    </a>
-                  </Link>
-                  <p>{s.fields.showDescription}</p>
-                </li>
-              ))}
-            </ul>
+            <PerfectScrollbar>
+              <ul>
+                { shows.map((s) => (
+                  <li key={s.sys.id}>
+                    <Link 
+                      href="/shows/[slug]"
+                      as={`/shows/${s.fields.slug}`}
+                    >
+                      <a>
+                        <img src={s.fields.showImage.fields.file.url} alt={s.fields.title} />
+                      </a>
+                    </Link>
+                    <p>{s.fields.showDescription}</p>
+                  </li>
+                ))}
+              </ul>
+            </PerfectScrollbar>
           </Col>
         </Row>
       </Content>

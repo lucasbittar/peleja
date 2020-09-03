@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import 'antd/dist/antd.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/global.css';
 
 const GA_TRACKING_ID = 'XX-XXXX-X';

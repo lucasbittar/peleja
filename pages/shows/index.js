@@ -34,6 +34,8 @@ ShowsList.getInitialProps = async ({ query }) => {
   try {
     const episodes = await api.getEntries({
       content_type: 'episode',
+      'fields.show.sys.contentType.sys.id': 'show',
+      'fields.show.fields.slug[ne]': 'bandeja',
       limit: 12,
       skip: query.page ? query.page * 12 : 0
     });

@@ -90,6 +90,8 @@ Index.getInitialProps = async () => {
   try {
     const episodes = await api.getEntries({
       content_type: 'episode',
+      'fields.show.sys.contentType.sys.id': 'show',
+      'fields.show.fields.slug[ne]': 'bandeja',
       limit: SIDEBAR_LIMIT
     });
     props = {
@@ -102,7 +104,8 @@ Index.getInitialProps = async () => {
 
   try {
     const shows = await api.getEntries({
-      content_type: 'show'
+      content_type: 'show',
+      'fields.slug[ne]': 'bandeja'
     });
     props = {
       ...props,

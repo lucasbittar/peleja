@@ -32,13 +32,12 @@ const EpisodesFeed = ({ episodes, page, total }) => {
       <EpisodesList>
         { episodes.map((e) => (
           <EpisodeTile key={e.sys.id} showColor={e.fields.show.fields.bgColor}>
-            <Link 
+            <Link
               href="/shows/[slug]/episode/[episode]"
               as={`/shows/${e.fields.show.fields.slug}/episode/${e.fields.slug}`}
             >
               <a>
                 <figure>
-                  <PlayCircleOutlined />
                   <img src={e.fields.featuredImage.fields.file.url} alt={e.fields.title} />
                   <CategoryTag textColor={e.fields.show.fields.textColor} bgColor={e.fields.show.fields.bgColor}>
                     {e.fields.show.fields.title}

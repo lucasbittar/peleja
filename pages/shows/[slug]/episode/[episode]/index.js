@@ -1,15 +1,22 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import api from '../../../../../api';
-import { SIDEBAR_LIMIT } from '../../../../../api/constants';
+import { SIDEBAR_LIMIT, SITE_URL, SITE_NAME } from '../../../../../api/constants';
 
 import Episode from '../../../../../components/Episode';
 
 const EpisodeDetails = ({ episode, articles }) => {
+  const router = useRouter();
   return (
     <>
       <Head>
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={episode.fields.title} />
+        <meta property="og:description" content={episode.fields.shortDescription} />
         <meta property="og:image" content={episode.fields.featuredImage.fields.file.url} />
+        <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Episode episode={episode} articles={articles} />
     </>

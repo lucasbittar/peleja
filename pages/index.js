@@ -1,18 +1,29 @@
+import Head from 'next/head';
 import Home from '../components/Home';
 
 import api from '../api';
-import { SIDEBAR_LIMIT } from '../api/constants';
+import { SIDEBAR_LIMIT, SITE_URL, SITE_NAME, SITE_IMAGE, SITE_DESCRIPTION } from '../api/constants';
 
 const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
   return (
-    <Home
-      articles={articles}
-      featured={featured}
-      highlight={highlight}
-      episodes={episodes}
-      shows={shows}
-      showsInfo={showsInfo}
-    />
+    <>
+      <Head>
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={SITE_NAME} />
+        <meta property="og:description" content={SITE_DESCRIPTION} />
+        <meta property="og:image" content={SITE_IMAGE} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <Home
+        articles={articles}
+        featured={featured}
+        highlight={highlight}
+        episodes={episodes}
+        shows={shows}
+        showsInfo={showsInfo}
+      />
+    </>
   );
 };
 

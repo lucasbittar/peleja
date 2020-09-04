@@ -12,7 +12,7 @@ const ArticleDetails = ({ article, articles }) => {
     <>
       <Head>
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={article.fields.title} />
+        <meta property="og:title" content={`${article.fields.title} | ${SITE_NAME}`} />
         <meta property="og:description" content={article.fields.shortDescription} />
         <meta property="og:image" content={article.fields.featuredImage.fields.file.url} />
         <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />

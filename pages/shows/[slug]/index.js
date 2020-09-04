@@ -12,7 +12,7 @@ const ShowDetails = ({ show, episodes, articles, page, total }) => {
     <>
       <Head>
         <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={show.fields.title} />
+        <meta property="og:title" content={`${show.fields.title} | ${SITE_NAME}`} />
         <meta property="og:description" content={show.fields.showDescription} />
         <meta property="og:image" content={show.fields.showImage.fields.file.url} />
         <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />

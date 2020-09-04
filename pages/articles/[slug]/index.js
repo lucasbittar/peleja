@@ -1,15 +1,20 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import api from '../../../api';
-import { SIDEBAR_LIMIT } from '../../../api/constants';
+import { SIDEBAR_LIMIT, SITE_URL } from '../../../api/constants';
 
 import Article from '../../../components/Article';
 
 const ArticleDetails = ({ article, articles }) => {
+  const router = useRouter();
   return (
     <>
       <Head>
+        <meta property="og:title" content={article.fields.title} />
+        <meta property="og:description" content={article.fields.shortDescription} />
         <meta property="og:image" content={article.fields.featuredImage.fields.file.url} />
+        <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
       </Head>
       <Article article={article} articles={articles} />
     </>

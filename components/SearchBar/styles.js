@@ -42,6 +42,7 @@ export const Wrapper = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 0.9rem;
+      color: #fff !important;
       background: #0f0f0f;
     }
   }
@@ -186,7 +187,7 @@ export const Wrapper = styled.div`
 
     input {
       background: #fff !important;
-      color: #888;
+      color: #888 !important;
     }
     ul {
       box-shadow: 0 5px 10px rgba(0,0,0,.08);

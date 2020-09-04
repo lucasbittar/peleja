@@ -7,6 +7,7 @@ import SearchBar from '../SearchBar';
 import {
   InstagramOutlined,
   YoutubeOutlined,
+  SearchOutlined,
   FacebookOutlined,
   TwitterOutlined,
   CloseOutlined,
@@ -35,8 +36,8 @@ const NavItems = () => {
         <li><Link href="/category/leia"><a>Leia</a></Link></li>
         <li><Link href="/shows"><a>Assista</a></Link></li>
         <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
-        <li>Fale</li>
         {/*
+        <li>Fale</li>
         <li>Compre</li>
         */}
         <li>
@@ -88,6 +89,7 @@ export default function Nav() {
         <aside>
           <NavItems />
           <div>
+            <SearchOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px', marginRight: 15, marginLeft: -5, paddingLeft: '1rem', borderLeft: '1px solid #222' }} />
             <MenuOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px' }} />
           </div>
         </aside>

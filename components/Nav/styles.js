@@ -4,7 +4,6 @@ import { darken } from 'polished';
 import { fontSansSerif } from '../Layout';
 
 export const Wrapper = styled.nav`
-  // background: #f4e229;
   background: #111;
   display: flex;
   width: 100%;
@@ -14,12 +13,22 @@ export const Wrapper = styled.nav`
   padding: 1rem 1rem;
 
   img {
-    width: 80px;
+    width: 60px;
   }
 
   .anticon {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: ${darken(0.2, '#fff')};
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (min-width: 375px) {
+    img {
+      width: 80px;
+    }
   }
 
   @media screen and (min-width: 992px) {

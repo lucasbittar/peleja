@@ -89,7 +89,7 @@ export default function Nav() {
         <aside>
           <NavItems />
           <div>
-            <SearchOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px', marginRight: 15, marginLeft: -5, paddingLeft: '1rem', borderLeft: '1px solid #222' }} />
+            <SearchOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px', marginRight: 15, marginLeft: -5, paddingLeft: '1rem', borderLeft: '1px solid #666' }} />
             <MenuOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px' }} />
           </div>
         </aside>

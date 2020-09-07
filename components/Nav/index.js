@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Drawer } from 'antd';
 
@@ -13,6 +13,8 @@ import {
   CloseOutlined,
   MenuOutlined,
 } from '@ant-design/icons';
+
+import api from '../../api';
 
 import { Wrapper } from './styles';
 
@@ -29,7 +31,7 @@ const NavTitle = ({ onClose }) => {
   );
 }
 
-const NavItems = () => {
+const NavItems = ({ navItems }) => {
   return (
     <>
       <ul className="nav-desktop">
@@ -37,6 +39,16 @@ const NavItems = () => {
         <li><Link href="/shows"><a>Assista</a></Link></li>
         <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
         <li><Link href="/shows/bandeja"><a>Bandeja</a></Link></li>
+        { navItems.map((item) => (
+          <li key={item.sys.id}>
+            <Link 
+              href="/pages/[slug]"
+              as={`/pages/${item.fields.slug}`}
+            >
+              <a>{item.fields.title}</a>
+            </Link>
+          </li>
+        ))}
         {/*
         <li>Fale</li>
         <li>Compre</li>
@@ -71,14 +83,36 @@ const NavItems = () => {
   )
 }
 
-export default function Nav() {
+const Nav = () => {
   const [visible, setVisible] = useState(false);
+  const [navItems, setNavItems] = useState([]);
   const showDrawer = () => {
     setVisible(true);
   };
   const onClose = () => {
     setVisible(false);
   };
+
+  useEffect(() => {
+
+    async function fetchNavItems() {
+
+      try {
+        const navItems = await api.getEntries({
+          content_type: 'page',
+          'fields.isVisible': true
+        });
+        setNavItems(navItems.items);
+
+      } catch (err) {
+        console.log('Something went wrong');
+      }
+    }
+
+    fetchNavItems();
+    
+  }, []);
+
   return (
     <Wrapper>
       <div>
@@ -88,7 +122,7 @@ export default function Nav() {
           </a>
         </Link>
         <aside>
-          <NavItems />
+          <NavItems navItems={navItems} />
           <div>
             <SearchOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px', marginRight: 15, marginLeft: -5, paddingLeft: '1rem', borderLeft: '1px solid #666' }} />
             <MenuOutlined onClick={showDrawer} style={{ color: '#fff', fontSize: '18px' }} />
@@ -109,3 +143,4 @@ export default function Nav() {
   );
 }
 
+export default Nav;

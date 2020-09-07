@@ -38,7 +38,6 @@ const NavItems = ({ navItems }) => {
         <li><Link href="/category/leia"><a>Leia</a></Link></li>
         <li><Link href="/shows"><a>Assista</a></Link></li>
         <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
-        <li><Link href="/shows/bandeja"><a>Bandeja</a></Link></li>
         { navItems.map((item) => (
           <li key={item.sys.id}>
             <Link 
@@ -49,6 +48,7 @@ const NavItems = ({ navItems }) => {
             </Link>
           </li>
         ))}
+        <li><Link href="/shows/bandeja"><a>Bandeja</a></Link></li>
         {/*
         <li>Fale</li>
         <li>Compre</li>

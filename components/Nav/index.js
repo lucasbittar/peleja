@@ -137,7 +137,7 @@ const Nav = () => {
         onClose={onClose}
         visible={visible}
       >
-        <NavItems />
+        <NavItems navItems={navItems} />
       </Drawer>
     </Wrapper>
   );

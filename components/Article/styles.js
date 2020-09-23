@@ -7,7 +7,8 @@ export const ArticlesContentWrapper = styled.article`
   margin-top: -2rem;
   h2 {
     font-family: ${fontSansSerif};
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   h3 {
@@ -56,6 +57,22 @@ export const ArticlesContentWrapper = styled.article`
     }
   }
 
+  figure {
+    margin: 0;
+    height: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  figcaption {
+    border-bottom: 1px solid #e5e5e5;
+    color: #111;
+    font-family: ${fontSansSerif};
+    font-size: 0.6rem;
+    opacity: 0.8;
+    padding: 0.5rem;
+    text-transform: uppercase;
+  }
+
   p {
     font-size: 1.3rem;
     line-height: 1.5;
@@ -85,6 +102,10 @@ export const ArticlesContentWrapper = styled.article`
 
     h3 {
       font-size: 1.5rem;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
     }
 
     p {
@@ -123,21 +144,6 @@ export const Header = styled.div`
 
   ul {
     margin: 0;
-  }
-
-  figure {
-    margin: 0;
-    height: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  figcaption {
-    font-family: ${fontSansSerif};
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    opacity: 0.8;
-    padding: 0.5rem;
-    border-bottom: 1px solid #e5e5e5;
   }
 
   small {
@@ -200,10 +206,6 @@ export const Header = styled.div`
 
     small {
       font-size: 1rem;
-    }
-
-    figcaption {
-      font-size: 0.8rem;
     }
 
     > div {

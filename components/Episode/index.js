@@ -42,7 +42,7 @@ const PageContent = ({ content }) => {
 const Main = ({ content, articles }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <PageContent content={content} />
         </Col>
@@ -61,7 +61,7 @@ const Episode = ({ episode, articles }) => {
         <Content>
           <Header>
             <CategoryTag textColor={episode.fields.show.fields.textColor} bgColor={episode.fields.show.fields.bgColor}>
-              <Link 
+              <Link
                 href="/shows/[slug]"
                 as={`/shows/${episode.fields.show.fields.slug}`}
               >
@@ -74,7 +74,7 @@ const Episode = ({ episode, articles }) => {
             <h2>{episode.fields.shortDescription}</h2>
             <div>
               <span>
-                <strong>{moment(episode.sys.createdAt).format('D [de] MMMM')}</strong> <em>(Atualizado em {moment(episode.sys.updatedAt).format('D [de] MMMM [às] hh:mm:ss')})</em>
+                <strong>{moment(episode.sys.createdAt).format('D [de] MMMM')}</strong>
               </span>
             </div>
           </Header>

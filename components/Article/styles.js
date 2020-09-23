@@ -57,7 +57,7 @@ export const ArticlesContentWrapper = styled.article`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     color: #111;
 
@@ -118,7 +118,6 @@ export const Header = styled.div`
   max-width: 1110px;
   margin: 0 auto;
   margin-top: 2rem;
-  margin-bottom: 1rem;
   color: #111;
   width: 100%;
 
@@ -153,7 +152,7 @@ export const Header = styled.div`
 
   h2 {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   img {
@@ -163,7 +162,6 @@ export const Header = styled.div`
   }
 
   > div {
-    margin-bottom: 1rem;
     small,
     span {
       font-family: ${fontSansSerif};

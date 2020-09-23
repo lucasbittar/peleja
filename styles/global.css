@@ -96,6 +96,7 @@ button {
 }
 .ant-col {
   margin-top: 1rem;
+  width: 100%;
 }
 .embedly-card {
   margin-top: 2rem;

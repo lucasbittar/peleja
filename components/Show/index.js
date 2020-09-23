@@ -36,11 +36,11 @@ const ArticlesContent = ({ content, episodes, page, total }) => {
           <>
             { episodes.map((e) => (
               <EpisodeTile key={e.sys.id} showColor={e.fields.show.fields.bgColor}>
-                <Link 
+                <Link
                   href="/shows/[slug]/episode/[episode]"
                   as={`/shows/${e.fields.show.fields.slug}/episode/${e.fields.slug}`}
                 >
-                  <a> 
+                  <a>
                     <figure>
                       <CategoryTag textColor={e.fields.show.fields.textColor} bgColor={e.fields.show.fields.bgColor}>#{e.fields.episodeNumber}</CategoryTag>
                       <img src={e.fields.featuredImage.fields.file.url} alt={e.fields.title} />
@@ -64,7 +64,7 @@ const ArticlesContent = ({ content, episodes, page, total }) => {
 const Main = ({ content, articles, episodes, page, total }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <ArticlesContent content={content} episodes={episodes} page={page} total={total} />
         </Col>

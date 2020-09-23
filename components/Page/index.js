@@ -35,7 +35,7 @@ const PageContent = ({ content }) => {
 const Main = ({ content, articles }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <PageContent content={content} />
         </Col>

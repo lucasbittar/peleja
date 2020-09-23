@@ -41,7 +41,7 @@ const ArticlesContent = ({ content }) => {
 const Main = ({ content, articles }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <ArticlesContent content={content} />
         </Col>
@@ -60,7 +60,7 @@ const Article = ({ article, articles }) => {
         <Content>
           <Header>
             <ul>
-              <Link 
+              <Link
                 href="/category/[slug]"
                 as={`/category/${article.fields.category.fields.slug}`}
               >
@@ -73,7 +73,7 @@ const Article = ({ article, articles }) => {
             <h2>{article.fields.shortDescription}</h2>
             <div>
               <span>
-                por <strong>{article.fields.articleAuthor.fields.name}</strong> | <strong>{moment(article.sys.createdAt).format('D [de] MMMM')}</strong> <em>(Atualizado em {moment(article.sys.updatedAt).format('D [de] MMMM [às] hh:mm:ss')})</em>
+                por <strong>{article.fields.articleAuthor.fields.name}</strong> | <strong>{moment(article.sys.createdAt).format('D [de] MMMM')}</strong>
               </span>
             </div>
           </Header>

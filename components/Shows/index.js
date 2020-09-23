@@ -58,7 +58,7 @@ const EpisodesFeed = ({ episodes, page, total }) => {
 const Main = ({ sidebar, episodes, page, total }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <EpisodesFeed episodes={episodes} page={page} total={total} />
         </Col>

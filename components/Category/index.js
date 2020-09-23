@@ -36,7 +36,7 @@ const ArticlesFeed = ({ category, articles }) => {
 const Main = ({ category, articles, sidebar }) => {
   return (
     <MainWrapper>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row gutter={{ sm: 16, md: 24, lg: 32 }}>
         <Col lg={16}>
           <ArticlesFeed category={category} articles={articles} />
         </Col>

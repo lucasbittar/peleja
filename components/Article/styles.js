@@ -74,19 +74,20 @@ export const ArticlesContentWrapper = styled.article`
   }
 
   .article-image {
-    max-width: 50%;
-
-    &--left {
-      float: left;
-    }
-
-    &--right {
-      float: right;
-    }
+    max-width: 100%;
+    float: none;
 
     @media screen and (min-width: 992px) {
       float: none;
-      max-width: 100%;
+      max-width: 50%;
+
+      &--left {
+        float: left;
+      }
+
+      &--right {
+        float: right;
+      }
     }
   }
 

@@ -142,7 +142,6 @@ export const ArticlesContentWrapper = styled.article`
 
     blockquote {
       width: 50%;
-      margin-left: -5%;
       font-size: 1.3rem;
       &:after {
         right: 40px;

@@ -73,6 +73,23 @@ export const ArticlesContentWrapper = styled.article`
     text-transform: uppercase;
   }
 
+  .article-image {
+    max-width: 50%;
+
+    &--left {
+      float: left;
+    }
+
+    &--right {
+      float: right;
+    }
+
+    @media screen and (min-width: 992px) {
+      float: none;
+      max-width: 100%;
+    }
+  }
+
   p {
     font-size: 1.3rem;
     line-height: 1.5;

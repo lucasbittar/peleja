@@ -34,6 +34,7 @@ const ArticlesContent = ({ content }) => {
         </figure>
       </Header>
       <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} />
+      <div id="disqus_thread"></div>
     </ArticlesContentWrapper>
   );
 };

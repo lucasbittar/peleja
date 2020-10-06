@@ -16,7 +16,11 @@ const ShowDetails = ({ show, episodes, articles, page, total }) => {
         <meta property="og:description" content={show.fields.showDescription} />
         <meta property="og:image" content={show.fields.showImage.fields.file.url} />
         <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={SITE_NAME} />
+        <meta name="twitter:title" content={`${show.fields.title} | ${SITE_NAME}`} />
+        <meta name="twitter:description" content={show.fields.showDescription} />
+        <meta name="twitter:image" content={show.fields.showImage.fields.file.url} />
+        <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Show show={show} articles={articles} episodes={episodes} page={page} total={total} />
     </>

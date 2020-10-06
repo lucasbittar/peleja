@@ -13,7 +13,11 @@ const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) =>
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:image" content={SITE_IMAGE} />
         <meta property="og:url" content={SITE_URL} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={SITE_NAME} />
+        <meta name="twitter:title" content={SITE_NAME} />
+        <meta name="twitter:description" content={SITE_DESCRIPTION} />
+        <meta name="twitter:image" content={SITE_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Home
         articles={articles}

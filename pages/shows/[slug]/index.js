@@ -19,7 +19,7 @@ const ShowDetails = ({ show, episodes, articles, page, total }) => {
         <meta name="twitter:site" content={SITE_NAME} />
         <meta name="twitter:title" content={`${show.fields.title} | ${SITE_NAME}`} />
         <meta name="twitter:description" content={show.fields.showDescription} />
-        <meta name="twitter:image" content={show.fields.showImage.fields.file.url} />
+        <meta name="twitter:image:src" content={show.fields.showImage.fields.file.url} />
         <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Show show={show} articles={articles} episodes={episodes} page={page} total={total} />

@@ -19,7 +19,7 @@ const ArticleDetails = ({ article, articles }) => {
         <meta name="twitter:site" content={SITE_NAME} />
         <meta name="twitter:title" content={`${article.fields.title} | ${SITE_NAME}`} />
         <meta name="twitter:description" content={article.fields.shortDescription} />
-        <meta name="twitter:image" content={article.fields.featuredImage.fields.file.url} />
+        <meta name="twitter:image:src" content={article.fields.featuredImage.fields.file.url} />
         <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Article article={article} articles={articles} />

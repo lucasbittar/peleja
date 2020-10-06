@@ -17,7 +17,7 @@ const PageDetails = ({ page, articles }) => {
         <meta property="og:url" content={`${SITE_URL}${router.asPath}`} />
         <meta name="twitter:site" content={SITE_NAME} />
         <meta name="twitter:title" content={`${page.fields.title} | ${SITE_NAME}`} />
-        <meta name="twitter:image" content={SITE_IMAGE} />
+        <meta name="twitter:image:src" content={SITE_IMAGE} />
         <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Page page={page} articles={articles} />

@@ -16,7 +16,7 @@ const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) =>
         <meta name="twitter:site" content={SITE_NAME} />
         <meta name="twitter:title" content={SITE_NAME} />
         <meta name="twitter:description" content={SITE_DESCRIPTION} />
-        <meta name="twitter:image:src" content={SITE_IMAGE} />
+        <meta name="twitter:image" content={SITE_IMAGE} />
         <meta name="twitter:card" content="summary_large_image"/>
       </Head>
       <Home

@@ -34,7 +34,7 @@
     "swr": "0.2.2",
     "use-debounce": "3.4.2",
     "uuid": "8.1.0",
-    "uuidv4": "6.1.0"
+    "uuidv4": "^6.1.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "1.10.7"

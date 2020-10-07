@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/global.css';
 
-const GA_TRACKING_ID = 'XX-XXXX-X';
+const GA_TRACKING_ID = 'UA-179964102-1';
 
 function App({ Component, pageProps }) {
   return (

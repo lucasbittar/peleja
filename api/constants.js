@@ -6,3 +6,4 @@ export const SITE_DESCRIPTION = 'Conteúdos diários sobre o futebol pouco visto
 export const SPACE_ID = process.env.spaceId;
 export const ACCESS_TOKEN = process.env.accessToken;
 export const SIDEBAR_LIMIT = 5;
+export const GA_TRACKING_ID = 'UA-179964102-1';

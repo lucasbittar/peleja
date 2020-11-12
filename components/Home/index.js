@@ -29,7 +29,7 @@ const HighlightArticles = ({ featured, highlight }) => {
       <Row gutter={{ lg: 32 }}>
         <Col lg={16}>
           <Highlight>
-            <Link 
+            <Link
               href="/articles/[slug]"
               as={`/articles/${highlight.fields.slug}`}
             >
@@ -58,7 +58,7 @@ const HighlightArticles = ({ featured, highlight }) => {
         <Col lg={8}>
           { featured.map((a, i) => (
             <Highlight key={a.sys.id} secondary small={i !== 0}>
-              <Link 
+              <Link
                 href="/articles/[slug]"
                 as={`/articles/${a.fields.slug}`}
               >
@@ -67,11 +67,13 @@ const HighlightArticles = ({ featured, highlight }) => {
                     <CategoryTag textColor={a.fields.category.fields.textColor} bgColor={a.fields.category.fields.backgroundColor}>{a.fields.category.fields.title}</CategoryTag>
                     <img src={a.fields.featuredImage.fields.file.url} alt={a.fields.title} />
                   </figure>
-                  <h1>{a.fields.title}</h1>
-                  {i === 0 && <p>{a.fields.shortDescription}</p> }
-                  <span>
-                    por <strong>{a.fields.articleAuthor.fields.name}</strong>
-                  </span>
+                  <section>
+                    <h1>{a.fields.title}</h1>
+                    {i === 0 && <p>{a.fields.shortDescription}</p> }
+                    <span>
+                      por <strong>{a.fields.articleAuthor.fields.name}</strong>
+                    </span>
+                  </section>
                 </a>
               </Link>
             </Highlight>
@@ -104,7 +106,7 @@ const Sidebar = ({ episodes }) => {
         <h1>Assista</h1>
         { episodes.map((e) => (
           <VideoTile key={e.sys.id}>
-            <Link 
+            <Link
               href="/shows/[slug]/episode/[episode]"
               as={`/shows/${e.fields.show.fields.slug}/episode/${e.fields.slug}`}
             >
@@ -141,7 +143,7 @@ const Shows = ({ shows, showsInfo }) => {
               <ul>
                 { shows.map((s) => (
                   <li key={s.sys.id}>
-                    <Link 
+                    <Link
                       href="/shows/[slug]"
                       as={`/shows/${s.fields.slug}`}
                     >

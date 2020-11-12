@@ -6,7 +6,7 @@ import { fontSansSerif } from '../Layout';
 export const FeedTileWrapper = styled.li`
   height: auto;
   margin-bottom: 1.5rem;
-  padding-bottom: 2rem;
+  // padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
   min-height: 100px;
 
@@ -20,7 +20,9 @@ export const FeedTileWrapper = styled.li`
     cursor: pointer;
     height: auto;
     min-height: auto;
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     color: #111;
     position: relative;
 
@@ -28,6 +30,7 @@ export const FeedTileWrapper = styled.li`
       position: relative;
       margin-bottom: 0.8rem;
       float: left;
+      flex-shrink: 0;
       display: inline-block;
       margin-right: 0.8rem;
       margin-bottom: 1.2rem;
@@ -47,7 +50,7 @@ export const FeedTileWrapper = styled.li`
         height: 80px;
 
         @media screen and (min-width: 992px) {
-          height: 124px;
+          height: 140px;
         }
       }
 
@@ -76,16 +79,16 @@ export const FeedTileWrapper = styled.li`
 
       @media screen and (min-width: 992px) {
         font-size: 1.2rem;
-        margin-top: 0.5rem;
         font-weight: 800;
       }
     }
 
     p {
+      display: none;
       font-size: 1rem;
       line-height: 1.3;
+      margin-bottom: 0.5rem;
       opacity: 0.8;
-      display: none;
 
       @media screen and (min-width: 992px) {
         display: block;
@@ -93,9 +96,10 @@ export const FeedTileWrapper = styled.li`
     }
 
     span {
+      display: block;
       font-family: ${fontSansSerif};
       font-size: 0.6rem;
-      position: absolute;
+      padding-bottom: 1rem;
       strong {
         color: ${darken(0.3, '#f4e229')};
       }
@@ -114,7 +118,10 @@ export const FeedTileWrapper = styled.li`
   &:nth-child(3n) {
     > div {
       position: relative;
+      display: flex;
+      flex-direction: column;
       figure {
+        display: block;
         margin-right: 0.8rem;
         margin-bottom: 1.2rem;
         width: 100%;

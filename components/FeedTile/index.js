@@ -10,13 +10,13 @@ moment.locale('pt-BR');
 const FeedTile = ({ data, noAuthor }) => {
   return (
     <FeedTileWrapper key={data.sys.id}>
-      <Link 
+      <Link
         href="/articles/[slug]"
         as={`/articles/${data.fields.slug}`}
       >
-        <div> 
+        <div>
           <figure>
-            <Link 
+            <Link
               href="/category/[slug]"
               as={`/category/${data.fields.category.fields.slug}`}
             >
@@ -28,19 +28,21 @@ const FeedTile = ({ data, noAuthor }) => {
             </Link>
             <img src={data.fields.featuredImage.fields.file.url} alt={data.fields.title} />
           </figure>
-          <h1>{data.fields.title}</h1>
-          <p>{data.fields.shortDescription}</p>
-          <span>
-            { noAuthor ? (
-              <>
-                <strong>{moment(data.sys.createdAt).format('D [de] MMMM')}</strong>
-              </>
-            ) : (
-              <>
-                por <strong>{data.fields.articleAuthor.fields.name}</strong> | <strong>{moment(data.sys.createdAt).format('D [de] MMMM')}</strong>
-              </>
-            )}
-          </span>
+          <section>
+            <h1>{data.fields.title}</h1>
+            <p>{data.fields.shortDescription}</p>
+            <span>
+              { noAuthor ? (
+                <>
+                  <strong>{moment(data.sys.createdAt).format('D [de] MMMM')}</strong>
+                </>
+              ) : (
+                <>
+                  por <strong>{data.fields.articleAuthor.fields.name}</strong> | <strong>{moment(data.sys.createdAt).format('D [de] MMMM')}</strong>
+                </>
+              )}
+            </span>
+          </section>
         </div>
       </Link>
     </FeedTileWrapper>

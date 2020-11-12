@@ -722,37 +722,47 @@ export const Highlight = styled.div`
     }
   }
 
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
   ${(props) =>
     props.secondary &&
     css`
       height: auto;
       margin-bottom: 1.5rem;
-      padding-bottom: 2rem;
       border-bottom: 1px solid #e5e5e5;
-      min-height: 100px;
       &:last-child {
         margin: 0;
       }
       a {
+        align-items: flex-start;
         height: auto;
         min-height: auto;
-        display: block;
+        display: flex;
         color: #111;
         position: relative;
+
+        @media screen and (min-width: 992px) {
+          display: block;
+        }
 
         figure {
           position: relative;
           margin-bottom: 0.8rem;
           float: left;
           display: inline-block;
+          flex-shrink: 0;
           margin-right: 0.8rem;
           margin-bottom: 1.2rem;
-          width: 40%;
+          width: 30%;
 
           @media screen and (min-width: 992px) {
             float: none;
             display: block;
             margin: 0;
+            margin-bottom: 1rem;
             width: 100%;
           }
 
@@ -785,7 +795,7 @@ export const Highlight = styled.div`
 
           @media screen and (min-width: 992px) {
             font-size: 1.2rem;
-            margin-top: 0.5rem;
+            margin-top: 0;
             font-weight: 800;
           }
         }
@@ -804,7 +814,7 @@ export const Highlight = styled.div`
         span {
           font-family: ${fontSansSerif};
           font-size: 0.6rem;
-          position: absolute;
+          padding-bottom: 1rem;
           strong {
             color: ${darken(0.3, '#f4e229')};
           }
@@ -833,12 +843,13 @@ export const Highlight = styled.div`
   ${(props) =>
     props.small &&
     css`
-      padding-bottom: 1.2rem;
-      min-height: 100px;
       @media screen and (min-width: 992px) {
         min-height: 125px;
       }
       a {
+        @media screen and (min-width: 992px) {
+          display: flex;
+        }
         h1 {
           font-size: 0.9rem;
           @media screen and (min-width: 992px) {
@@ -850,7 +861,7 @@ export const Highlight = styled.div`
           display: inline-block;
           margin-right: 0.8rem;
           margin-bottom: 1.2rem;
-          width: 40%;
+          width: 30%;
 
           @media screen and (min-width: 992px) {
             width: 50%;

@@ -23,9 +23,6 @@ const Footer = () => {
           <ul>
             <li><Link href="/category/leia"><a>Leia</a></Link></li>
             <li><Link href="/shows"><a>Assista</a></Link></li>
-            <li><Link href="/category/ouca"><a>Ouça</a></Link></li>
-            <li><Link href="/shows/bandeja"><a>Bandeja</a></Link></li>
-            {/* <li><Link href="/category/ouca"><a>Fale</a></Link></li> */}
           </ul>
         </Row>
       </div>

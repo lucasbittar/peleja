@@ -27,7 +27,7 @@ const PageContent = ({ content }) => {
   return (
     <ArticlesContentWrapper>
       <Header />
-      <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} />
+      { content.fields.body && <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} /> }
     </ArticlesContentWrapper>
   );
 };

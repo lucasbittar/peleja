@@ -24,6 +24,8 @@ import {
 moment.locale('pt-BR');
 
 const HighlightArticles = ({ featured, highlight }) => {
+  const highlightedArticle = highlight ? highlight : featured[0];
+
   return (
     <HightlightsWrapper>
       <Row gutter={{ lg: 32 }}>
@@ -31,23 +33,23 @@ const HighlightArticles = ({ featured, highlight }) => {
           <Highlight>
             <Link
               href="/articles/[slug]"
-              as={`/articles/${highlight.fields.slug}`}
+              as={`/articles/${highlightedArticle.fields.slug}`}
             >
               <a>
                 <figure>
-                  <img src={highlight.fields.featuredImage.fields.file.url} alt={highlight.fields.title} />
+                  <img src={highlightedArticle.fields.featuredImage.fields.file.url} alt={highlightedArticle.fields.title} />
                 </figure>
                 <div>
                   <div>
-                    <CategoryTag textColor={highlight.fields.category.fields.textColor} bgColor={highlight.fields.category.fields.backgroundColor}>{highlight.fields.category.fields.title}</CategoryTag>
+                    <CategoryTag textColor={highlightedArticle.fields.category.fields.textColor} bgColor={highlightedArticle.fields.category.fields.backgroundColor}>{highlightedArticle.fields.category.fields.title}</CategoryTag>
                   </div>
                   <h1>
-                    <span>{highlight.fields.title}</span>
+                    <span>{highlightedArticle.fields.title}</span>
                   </h1>
-                  <p>{highlight.fields.shortDescription}</p>
+                  <p>{highlightedArticle.fields.shortDescription}</p>
                   <div>
                     <span>
-                      por <strong>{highlight.fields.articleAuthor.fields.name}</strong>
+                      por <strong>{highlightedArticle.fields.articleAuthor.fields.name}</strong>
                     </span>
                   </div>
                 </div>
@@ -172,7 +174,7 @@ const Home = ({ articles, featured, highlight, episodes, banners }) => {
       <Wrapper>
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
-          <HomeBanners banners={banners} />
+          { banners.length > 0 && <HomeBanners banners={banners} /> }
           <Main articles={articles} sidebar={episodes} />
         </Content>
       </Wrapper>

@@ -139,8 +139,8 @@ const HomeBanners = ({ banners }) => {
     <HomeBannersWrapper>
       <Row gutter={{ lg: 32 }}>
         <Col lg={32}>
-          <a href={currentBanner.fields.url}>
-            <img src={currentBanner.fields.bannerImage.fields.file.url} alt={currentBanner.fields.description} target="_blank" />
+          <a href={currentBanner.fields.url} target="_blank">
+            <img src={currentBanner.fields.bannerImage.fields.file.url} alt={currentBanner.fields.description} />
           </a>
         </Col>
       </Row>

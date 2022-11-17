@@ -4,7 +4,7 @@ import Home from '../components/Home';
 import api from '../api';
 import { SIDEBAR_LIMIT, SITE_URL, SITE_NAME, SITE_IMAGE, SITE_DESCRIPTION } from '../api/constants';
 
-const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
+const Index = ({ articles, featured, highlight, episodes, banners }) => {
   return (
     <>
       <Head>
@@ -24,8 +24,7 @@ const Index = ({ articles, featured, highlight, episodes, shows, showsInfo }) =>
         featured={featured}
         highlight={highlight}
         episodes={episodes}
-        shows={shows}
-        showsInfo={showsInfo}
+        banners={banners}
       />
     </>
   );
@@ -114,6 +113,18 @@ Index.getInitialProps = async () => {
     props = {
       ...props,
       shows: shows.items,
+    };
+  } catch (err) {
+    console.log('Something went wrong');
+  }
+
+  try {
+    const banners = await api.getEntries({
+      content_type: 'homeBanners'
+    });
+    props = {
+      ...props,
+      banners: banners.items,
     };
   } catch (err) {
     console.log('Something went wrong');

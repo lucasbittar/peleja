@@ -80,6 +80,16 @@ export const StoriesWrapper = styled.ul`
     `};
 `;
 
+export const HomeBannersWrapper = styled.div `
+  background: transparent;
+  margin: 0 0 6rem 0;
+
+  img {
+    width: 100%;
+  }
+
+`;
+
 export const ShowsWrapper = styled.div`
   margin: 0 auto;
   width: 100%;

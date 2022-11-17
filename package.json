@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
     "antd": "4.2.5",
     "axios": "0.19.2",
     "contentful": "7.14.6",

@@ -12,7 +12,7 @@ import {
   Content,
   Highlight,
   CategoryTag,
-  ShowsWrapper,
+  HomeBannersWrapper,
   VideoTile,
   HightlightsWrapper,
   ArticlesFeedWrapper,
@@ -128,38 +128,21 @@ const Sidebar = ({ episodes }) => {
   );
 };
 
-const Shows = ({ shows, showsInfo }) => {
+const HomeBanners = ({ banners }) => {
+  const numBanners = banners.length;
+  const randomNumber = Math.floor(Math.random() * (numBanners - 0) + 0);
+  const currentBanner = banners[randomNumber];
+
   return (
-    <ShowsWrapper>
-      <Content>
-        <Row gutter={{ lg: 32 }}>
-          <Col lg={6}>
-            <h2>{showsInfo.fields.title}</h2>
-            <p>{showsInfo.fields.description}</p>
-              <Link href="/shows"><a>Todos os programas</a></Link>
-          </Col>
-          <Col lg={18}>
-            <PerfectScrollbar>
-              <ul>
-                { shows.map((s) => (
-                  <li key={s.sys.id}>
-                    <Link
-                      href="/shows/[slug]"
-                      as={`/shows/${s.fields.slug}`}
-                    >
-                      <a>
-                        <img src={s.fields.showImage.fields.file.url} alt={s.fields.title} />
-                      </a>
-                    </Link>
-                    <p>{s.fields.showDescription}</p>
-                  </li>
-                ))}
-              </ul>
-            </PerfectScrollbar>
-          </Col>
-        </Row>
-      </Content>
-    </ShowsWrapper>
+    <HomeBannersWrapper>
+      <Row gutter={{ lg: 32 }}>
+        <Col lg={32}>
+          <a href={currentBanner.fields.url}>
+            <img src={currentBanner.fields.bannerImage.fields.file.url} alt={currentBanner.fields.description} target="_blank" />
+          </a>
+        </Col>
+      </Row>
+    </HomeBannersWrapper>
   );
 };
 
@@ -178,19 +161,18 @@ const Main = ({ articles, sidebar }) => {
   );
 };
 
-const Home = ({ articles, featured, highlight, episodes, shows, showsInfo }) => {
+const Home = ({ articles, featured, highlight, episodes, banners }) => {
   // console.log('ARTICLES', articles);
   // console.log('FEATURED', featured);
   // console.log('HIGHLIGHT', highlight);
   // console.log('episodes', episodes);
-  // console.log('SHOWS', shows);
-  // console.log('SHOWS INFO', showsInfo);
+  // console.log('BANNERS', banners);
   return (
     <Layout title="PELEJA">
       <Wrapper>
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
-          <Shows shows={shows} showsInfo={showsInfo} />
+          <HomeBanners banners={banners} />
           <Main articles={articles} sidebar={episodes} />
         </Content>
       </Wrapper>

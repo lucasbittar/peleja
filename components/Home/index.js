@@ -101,11 +101,11 @@ const ArticlesFeed = ({ articles }) => {
   )
 };
 
-const Sidebar = ({ episodes }) => {
+const Sidebar = ({ episodes, sidebarTitle }) => {
   return (
     <SidebarWrapper>
       <SectionHeader>
-        <h1>Assista</h1>
+        <h1>{sidebarTitle.fields.title}</h1>
         { episodes.map((e) => (
           <VideoTile key={e.sys.id}>
             <Link
@@ -148,7 +148,7 @@ const HomeBanners = ({ banners }) => {
   );
 };
 
-const Main = ({ articles, sidebar }) => {
+const Main = ({ articles, sidebar, sidebarTitle }) => {
   return (
     <MainWrapper>
       <Row gutter={{ lg: 32 }}>
@@ -156,26 +156,27 @@ const Main = ({ articles, sidebar }) => {
           <ArticlesFeed articles={articles} />
         </Col>
         <Col lg={8}>
-          <Sidebar episodes={sidebar} />
+          <Sidebar episodes={sidebar} sidebarTitle={sidebarTitle} />
         </Col>
       </Row>
     </MainWrapper>
   );
 };
 
-const Home = ({ articles, featured, highlight, episodes, banners }) => {
+const Home = ({ articles, featured, highlight, episodes, banners, sidebar }) => {
   // console.log('ARTICLES', articles);
   // console.log('FEATURED', featured);
   // console.log('HIGHLIGHT', highlight);
-  // console.log('episodes', episodes);
+  // console.log('EPISODES', episodes);
   // console.log('BANNERS', banners);
+  // console.log('SIDEBAR', sidebar);
   return (
     <Layout title="PELEJA">
       <Wrapper>
         <Content>
           <HighlightArticles featured={featured} highlight={highlight} />
           { banners.length > 0 && <HomeBanners banners={banners} /> }
-          <Main articles={articles} sidebar={episodes} />
+          <Main articles={articles} sidebar={episodes} sidebarTitle={sidebar} />
         </Content>
       </Wrapper>
     </Layout>

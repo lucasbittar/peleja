@@ -4,7 +4,7 @@ import Home from '../components/Home';
 import api from '../api';
 import { SIDEBAR_LIMIT, SITE_URL, SITE_NAME, SITE_IMAGE, SITE_DESCRIPTION } from '../api/constants';
 
-const Index = ({ articles, featured, highlight, episodes, banners }) => {
+const Index = ({ articles, featured, highlight, episodes, banners, sidebar }) => {
   return (
     <>
       <Head>
@@ -25,13 +25,14 @@ const Index = ({ articles, featured, highlight, episodes, banners }) => {
         highlight={highlight}
         episodes={episodes}
         banners={banners}
+        sidebar={sidebar}
       />
     </>
   );
 };
 
 Index.getInitialProps = async () => {
-  let props = { articles: [], featured: [], highlight: [], episodes: [], shows: [], showsInfo: null };
+  let props = { articles: [], featured: [], highlight: [], episodes: [], shows: [], sidebar: null, banners: [] };
 
   try {
     const articles = await api.getEntries({
@@ -78,13 +79,13 @@ Index.getInitialProps = async () => {
   }
 
   try {
-    const showsInfo = await api.getEntries({
-      content_type: 'showsHome',
+    const sidebar = await api.getEntries({
+      content_type: 'sidebar',
       limit: 1
     });
     props = {
       ...props,
-      showsInfo: showsInfo.items[0],
+      sidebar: sidebar.items[0],
     };
   } catch (err) {
     console.log('Something went wrong');
@@ -93,8 +94,7 @@ Index.getInitialProps = async () => {
   try {
     const episodes = await api.getEntries({
       content_type: 'episode',
-      'fields.show.sys.contentType.sys.id': 'show',
-      'fields.show.fields.slug[ne]': 'bandeja',
+      'fields.sidebarFeatured': true,
       limit: SIDEBAR_LIMIT
     });
     props = {

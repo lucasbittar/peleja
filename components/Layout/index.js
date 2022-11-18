@@ -82,7 +82,11 @@ export const StoriesWrapper = styled.ul`
 
 export const HomeBannersWrapper = styled.div `
   background: transparent;
-  margin: 0 0 6rem 0;
+  margin: 0 0 2rem 0;
+
+  @media screen and (min-width: 992px) {
+    margin: 0 0 6rem 0;
+  }
 
   img {
     width: 100%;
@@ -230,7 +234,7 @@ export const Content = styled.div`
 `;
 
 export const HightlightsWrapper = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding-bottom: 0;
 
   @media screen and (min-width: 992px) {

@@ -143,7 +143,7 @@ const SearchBar = ({ nav, drawer }) => {
           limit: 10,
           query: queryInput
         });
-        console.log('RESPONSE', response.items);
+        // console.log('RESPONSE', response.items);
         setLoading(false);
         setResults(response.items);
       } else {

@@ -16,7 +16,7 @@ const Footer = () => {
             <img src="/assets/logo-white.png" alt="PELEJA" />
           </Col>
           <Col style={{ display: 'flex', alignItems: 'center' }}>
-            PELEJA &copy; 2020 - Todos os direitos reservados
+            PELEJA &copy; 2022 - Todos os direitos reservados
           </Col>
         </Row>
         <Row>

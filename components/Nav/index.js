@@ -59,12 +59,12 @@ const NavItems = ({ navItems }) => {
       </ul>
       <ul>
         <li>
-          <a href="http://instagram.com/tudopeleja" target="_blank">
+          <a href="http://instagram.com/peleja" target="_blank">
             <InstagramOutlined />
           </a>
         </li>
         <li>
-          <a href="http://facebook.com/tudopeleja" target="_blank">
+          <a href="http://facebook.com/pelejabr" target="_blank">
             <FacebookOutlined />
           </a>
         </li>
@@ -74,7 +74,7 @@ const NavItems = ({ navItems }) => {
           </a>
         </li>
         <li>
-          <a href="http://twitter.com/tudopeleja" target="_blank">
+          <a href="http://twitter.com/peleja" target="_blank">
             <TwitterOutlined />
           </a>
         </li>

@@ -2,6 +2,8 @@ import moment from 'moment';
 import Link from 'next/link';
 import { Row, Col } from 'antd';
 import marked from 'marked';
+import { DiscussionEmbed } from 'disqus-react';
+import {useRouter} from 'next/router';
 
 import Sidebar from '../Sidebar';
 
@@ -25,6 +27,9 @@ const getParsedMarkdown = (content) => {
 }
 
 const ArticlesContent = ({ content }) => {
+
+  const router = useRouter();
+
   return (
     <ArticlesContentWrapper>
       <Header>
@@ -34,7 +39,17 @@ const ArticlesContent = ({ content }) => {
         </figure>
       </Header>
       <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} />
-      <div id="disqus_thread"></div>
+      <DiscussionEmbed
+          shortname={content.fields.slug}
+          config={
+              {
+                  url: router.pathname,
+                  identifier: content.sys.id,
+                  title: content.fields.title,
+                  language: 'pt_BR'
+              }
+          }
+      />
     </ArticlesContentWrapper>
   );
 };

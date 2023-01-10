@@ -33,8 +33,6 @@ const ArticlesContent = ({ content }) => {
       ...content,
       url: window.location.href
     }
-
-    console.log('CONTENT', content);
   }
 
   return (

@@ -2,7 +2,6 @@ import moment from 'moment';
 import Link from 'next/link';
 import { Row, Col } from 'antd';
 import marked from 'marked';
-import { DiscussionEmbed } from 'disqus-react';
 
 import Sidebar from '../Sidebar';
 
@@ -27,14 +26,6 @@ const getParsedMarkdown = (content) => {
 
 const ArticlesContent = ({ content }) => {
 
-  if (typeof window !== "undefined") {
-    // Client-side-only code
-    content = {
-      ...content,
-      url: window.location.href
-    }
-  }
-
   return (
     <ArticlesContentWrapper>
       <Header>
@@ -44,17 +35,6 @@ const ArticlesContent = ({ content }) => {
         </figure>
       </Header>
       <div dangerouslySetInnerHTML={getParsedMarkdown(content.fields.body)} />
-      <DiscussionEmbed
-          shortname="peleja"
-          config={
-              {
-                  url: content.url,
-                  identifier: content.sys.id,
-                  title: content.fields.title,
-                  language: 'pt_BR'
-              }
-          }
-      />
     </ArticlesContentWrapper>
   );
 };
